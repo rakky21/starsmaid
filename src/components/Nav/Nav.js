@@ -6,8 +6,8 @@ const Nav = () => {
       <h1 className="title_nav">
         Stars<span className="maid">Maid</span> Inc
       </h1>
-      <div className="list_nav">
-        <ul>
+      <div className="container_nav">
+        <ul className="ul_nav">
           <li>
             <a href="#anchor_home">Home</a>
           </li>
@@ -20,10 +20,10 @@ const Nav = () => {
         </ul>
         <ul className="ul_login">
           <li>
-            <a> Login</a>
+            <a href="#login"> Login</a>
           </li>
           <li>
-            <a> SignUp</a>
+            <a href="#signup"> SignUp</a>
           </li>
         </ul>
       </div>
