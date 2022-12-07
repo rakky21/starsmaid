@@ -14,8 +14,24 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: whitesmoke;
   flex-direction: column;
-  max-width: 95rem;
+  /* max-width: 95rem; */
   min-height: 100vh;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  margin: 0;
+  color: var(--dark);
+  line-height: 1.25;
+}
+
+main {
+  margin:  auto;
+  width: 94%;
 }
 section{
   text-align: center;
@@ -26,7 +42,7 @@ section{
   overflow: hidden;
 }
 .section_app {
-  background-color:red;
+  /* background-color:red; */
   color: white;
 }
 .btn {
@@ -83,7 +99,7 @@ section{
 }
 .ul_login {
   position: absolute;
-  right: 15rem;
+  right: 5rem;
   margin: auto;
   width: min-content;
   display:block;
@@ -134,47 +150,17 @@ section{
   display: grid;
 }
 form > label , input {
-  width: 65%;
+  width: 60%;
   margin: auto;
+  margin-bottom: 0.5rem;
+  display: grid;
 }
 
-/* SECOND */
-/* .contact_section{
-  margin: 1.5rem auto;
-  border-radius: 5px;
-  overflow: hidden;
-  width: fit-content;
-  display: grid;
-  text-align: center;
-  max-width: fit-content;
-  transition: var(--transition);
+form > input {
+  background: rgb(220,220,220);
 }
-.contact_form{
-  border: 1px solid transparent;
-  padding: 1.5rem;
-  transition: var(--transition);
-  background-color: transparent;
-  display: grid;
-}
-.contact_section:hover{
-  transition: var(--transition);
-  background-color: var(--color-letter-primary);
-}
-.contact_section > label , .contact_form input, textarea {
-  text-align: left;
-  display: grid;
-  margin-bottom: 0.5rem;
-  resize: none;
-}
-.contact_form > textarea{
-  margin-bottom: 1.5rem;
-  padding-bottom: 5rem;
-}
-.contact_container h2 {
-  font-size: 35px;
-  width: fit-content;
-  margin: 1rem auto;
-} */
+
+
 
 /* ===+===
     FOOTER
@@ -184,8 +170,7 @@ form > label , input {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: var(--color--primary);
-  max-width: 95rem;
+  background-color: var(--color--primary);  width: 94%;
 }
 
 
@@ -205,4 +190,15 @@ form > label , input {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+
+.react-calendar {
+  background-color: red;
+  width: auto;
+  margin: auto;
+}
+
+.react-calendar > .calendar_section {
+  width:  max-content;
 }

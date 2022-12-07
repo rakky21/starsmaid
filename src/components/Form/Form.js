@@ -3,7 +3,10 @@ import React from "react";
 function Form() {
   return (
     <div className="section_form">
-      <h2> Apointment Availability</h2>
+      <div className="form_heading">
+        <h2> Request An Estimate</h2>
+        <p> Submit a request to receive a </p>
+      </div>
       <form className="contact_form">
         <label for="name">Enter name:</label>
         <input
@@ -36,10 +39,8 @@ function Form() {
         <button className="btn" type="submit">
           Book It
         </button>
-        <p>
-          Already have an account?
-          <button className="btn">Login</button>
-        </p>
+        <p>Already have an account?</p>
+        <button className="btn">Login</button>
       </form>
     </div>
   );

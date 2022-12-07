@@ -27,6 +27,9 @@ const Nav = () => {
           </li>
         </ul>
       </div>
+      <div>
+        
+      </div>
     </section>
   );
 };
