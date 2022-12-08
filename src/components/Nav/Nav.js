@@ -7,6 +7,16 @@ const Nav = () => {
         Stars<span className="maid">Maid</span> Inc
       </h1>
       <div className="container_nav">
+        <ul className="ul_login">
+          <li>
+            <a href="#login"> Login</a>
+          </li>
+          <li>
+            <a href="#signup"> SignUp</a>
+          </li>
+        </ul>
+      </div>
+      <div className="container_navdos">
         <ul className="ul_nav">
           <li>
             <a href="#anchor_home">Home</a>
@@ -18,17 +28,6 @@ const Nav = () => {
             <a href="#anchor_media">Media</a>
           </li>
         </ul>
-        <ul className="ul_login">
-          <li>
-            <a href="#login"> Login</a>
-          </li>
-          <li>
-            <a href="#signup"> SignUp</a>
-          </li>
-        </ul>
-      </div>
-      <div>
-        
       </div>
     </section>
   );

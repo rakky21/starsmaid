@@ -28,22 +28,12 @@ h6 {
   color: var(--dark);
   line-height: 1.25;
 }
-
-main {
-  margin:  auto;
-  width: 94%;
-}
 section{
-  text-align: center;
   margin: auto;
-  background-color: white;
+  /* width: 112rem; */
   color: var(--color--primary);
   font-size: calc(12px + 2vmin);
   overflow: hidden;
-}
-.section_app {
-  /* background-color:red; */
-  color: white;
 }
 .btn {
   width: max-content;
@@ -73,18 +63,29 @@ section{
 .section_nav  {
   background-color: var(--color--primary);
   color: whitesmoke;
-  display: flex;
-  padding: 0.60rem .75rem;
+  display: grid;
+  padding: 0.60rem auto;
   align-items: center;
+  width: 100%;
 }
 .title_nav{
  font-size: 4rem;
  margin: 1rem 2rem;
- left:0;
+ text-align: center;
  width: fit-content;
 }
 .container_nav{
   overflow: hidden;
+}
+.container_navdos > ul , a {
+  display:inline-flex;
+  list-style: none;
+  gap: 1.5rem;
+  font-size: 2rem;
+  text-decoration: none;
+  color: white;
+  left: 0;
+  margin: auto;
 }
 .container_nav > ul , a {
   display:inline-flex;
@@ -95,16 +96,53 @@ section{
   color: white;
 }
 .ul_nav{
+  /* background-color: blueviolet; */
   margin: auto;
 }
 .ul_login {
+  /* background-color: red; */
   position: absolute;
   right: 5rem;
   margin: auto;
   width: min-content;
   display:block;
 }
+.background_navspecials{
+  font-size: 1rem;
+  background-color: grey;
+  margin: auto;
+  width: fit-content;
+  height: auto;
+}
 /* ADD AN OR SECTION FOR RIGHT  */
+
+
+
+/* ===+===
+    HOME
+   ===+=== */
+.section_home {
+  margin: auto;
+  width: fit-content;
+}
+
+
+
+/* ===+===
+    ABOUT
+   ===+=== */
+   .section_about {
+    margin: auto;
+    width: fit-content;
+  }
+/* ===+===
+    BUNDLE
+   ===+=== */
+   /* .section_bundle {
+    margin: auto;
+    width: fit-content;
+  } */
+
 
 
 /* ===+===
@@ -168,11 +206,22 @@ form > input {
 .section_footer {
   text-align: center;
   position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: var(--color--primary);  width: 94%;
+  background-color: var(--color--primary);
+  width:100%;
+  height:3.5rem;
+  bottom:0;
+  left:0;
 }
 
+
+
+/* ===+===
+    BUNDLES
+   ===+=== */
+.section_bundle{
+  margin: auto;
+  width: fit-content;
+}
 
 
 /* ===+===
