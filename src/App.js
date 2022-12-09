@@ -2,7 +2,6 @@ import React from "react";
 
 import "react-calendar/dist/Calendar.css";
 
-import Home from "./components/Home/Home";
 import Specials from "./components/Specials/Specials";
 import Footer from "./components/Footer/Footer";
 import Nav from "./components/Nav/Nav";
@@ -13,11 +12,12 @@ function App() {
   return (
     <main className="section_app">
       <Nav />
-      <Home />
       <About />
       <Specials />
       <Schedule />
-      <Footer />
+      <footer>
+        <Footer />
+      </footer>
     </main>
   );
 }

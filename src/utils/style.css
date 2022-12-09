@@ -6,6 +6,15 @@
   --transition3: all 2ms ease;
   
   --color--primary : #4169e1;
+
+  --color-letter-primary:#6c1b31;
+
+  --color-background-primary: #282828;
+  --color-background-secondary: #696969;
+
+  --color-top-borders: #481722;
+  --color-top-borders2: #6c1b31;
+  --color-top-borders3: #96385b;
 }
 body {
   margin: auto;
@@ -16,6 +25,7 @@ body {
   flex-direction: column;
   /* max-width: 95rem; */
   min-height: 100vh;
+  background-color: var(--color-background-primary);
 }
 h1,
 h2,
@@ -31,21 +41,26 @@ h6 {
 section{
   margin: auto;
   /* width: 112rem; */
-  color: var(--color--primary);
+  color: var(--color-top-borders2);
+  background-color: var(--color-background-secondary);
   font-size: calc(12px + 2vmin);
   overflow: hidden;
+  padding: 2rem;
+  border-radius: .5rem;
 }
 .btn {
-  width: max-content;
+  /* width: max-content; */
+  width: 11rem;
   display: inline-block;
-  background-color: var(--color--primary);
+  background-color: var(--color-top-borders);
   padding: 0.65rem 1.5rem;
   border-radius: 0.4rem;
   cursor: pointer;
-  border: 1px solid var(--color-border-cyan);
+  border: .1rem solid var(--color-letter-primary);
   margin-bottom: 1.5rem;
   transition: var(--transition);
   margin: auto;
+  color: whitesmoke;
 }
 
 .btn:hover{
@@ -61,12 +76,13 @@ section{
     NAV
    ===+=== */
 .section_nav  {
-  background-color: var(--color--primary);
+  background-color: var(--color-top-borders);
   color: whitesmoke;
   display: grid;
   padding: 0.60rem auto;
   align-items: center;
   width: 100%;
+  border-bottom: solid .2rem var(--color-top-borders2);
 }
 .title_nav{
  font-size: 4rem;
@@ -119,29 +135,45 @@ section{
 
 
 /* ===+===
-    HOME
-   ===+=== */
-.section_home {
-  margin: auto;
-  width: fit-content;
-}
-
-
-
-/* ===+===
     ABOUT
    ===+=== */
    .section_about {
-    margin: auto;
-    width: fit-content;
+    margin: 1rem;
+    align-items: center;
+    display: inline-flex;
   }
+  .about_title {
+    margin: auto;
+    font-size: 5rem;
+    align-content: center;
+    padding: .5rem;
+  }
+  .about_details {
+    margin: auto;
+    float:left;
+    position: static;
+  }
+
+  .about_fotografia {
+    height: auto;  
+    width: 75rem;
+    /* margin: auto 8rem; */
+    float: right;
+    position:static;
+    border: solid .2rem var(--color-top-borders);
+    }
+
+
+
 /* ===+===
     BUNDLE
    ===+=== */
-   /* .section_bundle {
+   .section_bundle {
     margin: auto;
     width: fit-content;
-  } */
+  }
+  /* KEEPS SPREAGIN! :O */
+
 
 
 
@@ -179,6 +211,7 @@ section{
   text-align: center;
   max-width: fit-content;
   transition: var(--transition);
+  /* background: url('../utils//images/formbackground.jpg'); */
 }
 .section_form > form{
   border: 1px solid transparent;
@@ -206,11 +239,11 @@ form > input {
 .section_footer {
   text-align: center;
   position: fixed;
-  background-color: var(--color--primary);
+  background-color: var(--color-top-borders);
   width:100%;
   height:3.5rem;
   bottom:0;
-  left:0;
+  /* left:0; */
 }
 
 

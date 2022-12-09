@@ -25,7 +25,7 @@ const Nav = () => {
             <a href="#anchor_appointments">Appointments</a>
           </li>
           <li>
-            <a href="#anchor_media">Media</a>
+            <a href="#anchor_media">Bundles</a>
           </li>
         </ul>
       </div>

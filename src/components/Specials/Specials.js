@@ -4,19 +4,28 @@ import NavBackground from "../../utils/images/navigator_backgroundF.jpg";
 import Bundle from "../Bundle/Bundle";
 
 const Specials = () => {
-
-    const [bundles, setBundles] = useState ([
-        {
-            id:2,
-            name: 'Nombre2',
-            description: 'description2'
-        },
-        {
-            id:1,
-            name: 'Nombre',
-            description: 'descriptions'
-        },
-    ])
+  const [bundles, setBundles] = useState([
+    {
+      id: 4,
+      name: "Nombre2",
+      description: "description2",
+    },
+    {
+      id: 3,
+      name: "Nombre2",
+      description: "description2",
+    },
+    {
+      id: 2,
+      name: "Nombre2",
+      description: "description2",
+    },
+    {
+      id: 1,
+      name: "Nombre",
+      description: "descriptions",
+    },
+  ]);
   return (
     <div>
       <div className="background_navspecials">
@@ -27,8 +36,7 @@ const Specials = () => {
         </p>
       </div>
       <Bundle listBundles={bundles} key={setBundles} />
-   </div>
-
+    </div>
   );
 };
 
