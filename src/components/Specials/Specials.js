@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import NavBackground from "../../utils/images/navigator_backgroundF.jpg";
 import Bundle from "../Bundle/Bundle";
 
+
 const Specials = () => {
   const [bundles, setBundles] = useState([
     {
@@ -17,12 +18,12 @@ const Specials = () => {
     },
     {
       id: 2,
-      name: "Nombre2",
+      name: "House Cleaning",
       description: "description2",
     },
     {
       id: 1,
-      name: "Nombre",
+      name: "Community Mangement Renovations",
       description: "descriptions",
     },
   ]);
@@ -30,9 +31,9 @@ const Specials = () => {
     <div>
       <div className="background_navspecials">
         <img src={NavBackground} alt="Navbackground" />
-        <p>
-          SCHEDULE AN ESTIMATE OR REFER A FRIEND AND GET $25.00 OFF YOUR NEXT
-          CLEANING SERVICE
+        <p className="para_specials">
+          SCHEDULE AN ESTIMATE OR REFER A FRIEND AND RECEIVE A $50.00 OFF YOUR
+          NEXT CLEANING OR RENOVATION SERVICE
         </p>
       </div>
       <Bundle listBundles={bundles} key={setBundles} />
