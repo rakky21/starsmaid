@@ -68,7 +68,7 @@ export default function Bundle({ listBundles }) {
         
       >
         {listBundles.map((bundle) => (
-          <SwiperSlide>
+          <SwiperSlide key={bundle.id}>
             <div>
               <h2 className="bundle_title"> {bundle.name}</h2>
               <div> {bundle.description} </div>
