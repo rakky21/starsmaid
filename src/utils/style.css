@@ -44,7 +44,7 @@ h6 {
   line-height: 1.25;
 }
 section{
-  margin: auto;
+  margin: 1.5rem;
   /* width: 112rem; */
   color: var(--color-top-borders2);
   background-color: var(--color-background-secondary);
@@ -88,6 +88,7 @@ section{
   align-items: center;
   width: 100%;
   border-radius: 0;
+  margin: auto;
   border-bottom: solid .2rem var(--color-top-borders2);
 }
 .title_nav{
@@ -117,12 +118,7 @@ section{
   text-decoration: none;
   color: white;
 }
-.ul_nav{
-  /* background-color: blueviolet; */
-  margin: auto;
-}
 .ul_login {
-  /* background-color: red; */
   position: absolute;
   right: 5rem;
   margin: auto;
@@ -150,8 +146,6 @@ section{
 }
 /* ADD AN OR SECTION FOR RIGHT  */
 
-
-
 /* ===+===
     ABOUT
    ===+=== */
@@ -172,17 +166,13 @@ section{
     position: static;
     color: var(--color-letter-primary);
   }
-
   .about_fotografia {
     height: auto;  
     width: 75rem;
-    /* margin: auto 8rem; */
     float: right;
     position:static;
     border: solid .1rem var(--color-top-borders);
     }
-
-
 
 /* ===+===
     BUNDLE
@@ -195,14 +185,12 @@ section{
 .swiperz_container{
   background-color: var(--color-background-secondary);
   color: var(--color-letter-primary);
-  /* max-width: 117rem; */
   padding: 1.5rem;
   border-radius: 5px;
   height: 40rem;
 
   margin: 1rem;
   align-items: center;
-  /* gap: 1rem; */
   }
 .swiperz_title{
   margin: auto;
@@ -212,17 +200,12 @@ section{
 .bundle_title{
   color: var(--color-letter-titles);
 }
-  /* KEEPS SPREADING! :O FIXED ;):)*/
-
-  
-
 
 /* ===+===
     SCHEDULE
    ===+=== */
 .section_schedule {
   width: auto;
-  margin: fit-content;
   display:block;
 }
 .section_container{
@@ -237,22 +220,16 @@ section{
   background-color: red;
 }
 
- 
-
 /* ===+===
     FORM
    ===+=== */
 .section_form{
-  /* position:fixed; */
-  margin: 1.5rem auto;
   border-radius: 5px;
   overflow: hidden;
   width: fit-content;
   text-align: center;
   max-width: fit-content;
   transition: var(--transition);
-  
-  /* background: url('../utils//images/formbackground.jpg'); */
 }
 .section_form > form{
   border: 1px solid transparent;
@@ -272,8 +249,6 @@ form > input {
   background: rgb(220,220,220);
 }
 
-
-
 /* ===+===
     FOOTER
    ===+=== */
@@ -284,11 +259,9 @@ form > input {
   width:100%;
   height:3.5rem;
   bottom:0;
+  margin: auto;
   border-radius: 0;
-  /* left:0; */
 }
-
-
 
 /* ===+===
     BUNDLES
@@ -297,7 +270,6 @@ form > input {
   margin: auto;
   width: fit-content;
 }
-
 
 /* ===+===
     MEDIA
@@ -314,15 +286,4 @@ form > input {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-
-.react-calendar {
-  background-color: red;
-  width: auto;
-  margin: auto;
-}
-
-.react-calendar > .calendar_section {
-  width:  max-content;
 }
