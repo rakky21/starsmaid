@@ -1,7 +1,8 @@
 import React from "react";
 
-import aboutDisplay from "../../utils/images/aboutfotografia.jpg";
+// import aboutDisplay from "../../utils/images/aboutfotografia.jpg";
 
+const { aboutfotografia } = require("../../utils/images/listasFotos");
 const About = () => {
   return (
     <section className="section_about">
@@ -14,7 +15,7 @@ const About = () => {
         </div>
       </div>
       {/* WORDING */}
-      <img className="about_fotografia" src={aboutDisplay} alt="office" />
+      <img className="about_fotografia" src={aboutfotografia} alt="office" />
     </section>
   );
 };

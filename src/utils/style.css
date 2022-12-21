@@ -90,6 +90,7 @@ section{
   align-items: center;
   width: 100%;
   border-radius: 0;
+  margin: auto;
   border-bottom: solid .2rem var(--color-top-borders2);
 }
 .title_nav{
@@ -221,7 +222,6 @@ section{
   font-size: medium;
 }
 
-
 /* ===+===
  SCHEDULE
 ===+=== */
@@ -248,21 +248,15 @@ section{
   background-color: red;
 }
 
- 
-
 /* ===+===
     FORM
    ===+=== */
 .section_form{
-  /* position:fixed; */
-  margin: 1.5rem auto;
   border-radius: 5px;
   overflow: hidden;
   text-align: center;
   max-width: 35%;
   transition: var(--transition);
-  
-  /* background: url('../utils//images/formbackground.jpg'); */
 }
 .section_form > form{
   border: 1px solid transparent;
@@ -281,8 +275,6 @@ form > label , input {
 form > input {
   background: rgb(220,220,220);
 }
-.menu_dropdown{
-}
 
 
 /* ===+===
@@ -295,11 +287,9 @@ form > input {
   width:100%;
   height:3.5rem;
   bottom:0;
+  margin: auto;
   border-radius: 0;
-  /* left:0; */
 }
-
-
 
 /* ===+===
     MEDIA
@@ -316,15 +306,4 @@ form > input {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-
-.react-calendar {
-  background-color: red;
-  width: auto;
-  margin: auto;
-}
-
-.react-calendar > .calendar_section {
-  width:  max-content;
 }

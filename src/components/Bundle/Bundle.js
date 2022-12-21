@@ -10,7 +10,7 @@ function Bundle({ listBundles }) {
         modules={[Pagination, Navigation]}
         spaceBetween={30}
         slidesPerView={3}
-        navigation
+        navi gation
         pagination={{ clickable: true }}
         className="swiper_container"
       >
@@ -44,25 +44,3 @@ function Bundle({ listBundles }) {
 }
 
 export default Bundle;
-
-// import React from "react";
-
-// function Bundle({ listBundles }) {
-//   return (
-//     <div className="container_bundle">
-//       <h2 className="title_bundle"> Bundles </h2>
-//       {listBundles.map((bundle) => (
-//         <div className="card_bundles" key={bundle.id}>
-//           <h3> {bundle.name}</h3>
-//           <img className="img_bundles" alt="Bundle img"/>
-//           <div>{bundle.description}</div>
-//           <button className="btn" type="submit">
-//             Select
-//           </button>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// }
-
-// export default Bundle;
