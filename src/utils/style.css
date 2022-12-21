@@ -4,12 +4,8 @@
   --transition: all 1s ease;
   --transition2: all 5s ease;
   --transition3: all 2ms ease;
-  
-  --color--primary : #4169e1;
 
   --color-letter-primary:#6a4043;
-
-  /* --color-letter-primary:#96565c; */
   --color-letter-titles:#6c1b31;
 
   --color-background-primary: #282828;
@@ -19,6 +15,15 @@
   --color-top-borders2: #6c1b31;
   --color-top-borders3: #96385b;
 }
+*{
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+img , picture, svg, video {
+  display: block;
+  max-width: 100%;
+}
 body {
   margin: auto;
   font-family: 'Poppins', sans-serif;
@@ -26,7 +31,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: whitesmoke;
   flex-direction: column;
-  /* max-width: 95rem; */
   min-height: 100vh;
   font-weight: 500;
   max-width: 100%;
@@ -45,7 +49,6 @@ h6 {
 }
 section{
   margin: auto;
-  /* width: 112rem; */
   color: var(--color-top-borders2);
   background-color: var(--color-background-secondary);
   font-size: calc(12px + 2vmin);
@@ -54,7 +57,6 @@ section{
   border-radius: .5rem;
 }
 .btn {
-  /* width: max-content; */
   width: 11rem;
   display: inline-block;
   background-color: var(--color-top-borders);
@@ -78,8 +80,8 @@ section{
 
 
 /* ===+===
-    NAV
-   ===+=== */
+  NAV
+===+=== */
 .section_nav  {
   background-color: var(--color-top-borders);
   color: whitesmoke;
@@ -117,18 +119,45 @@ section{
   text-decoration: none;
   color: white;
 }
-.ul_nav{
-  /* background-color: blueviolet; */
-  margin: auto;
-}
 .ul_login {
-  /* background-color: red; */
   position: absolute;
   right: 5rem;
   margin: auto;
   width: min-content;
   display:block;
 }
+
+/* ===+===
+  ABOUT
+===+=== */
+   .section_about {
+    margin: 1rem;
+    align-items: center;
+    display: inline-flex;
+  }
+  .about_title {
+    margin: auto;
+    font-size: 5rem;
+    align-content: center;
+    padding: .5rem;
+  }
+  .about_details {
+    margin: auto;
+    float:left;
+    position: static;
+    color: var(--color-letter-primary);
+  }
+  .about_fotografia {
+    height: auto;  
+    width: 75rem;
+    float: right;
+    position:static;
+    border: solid .1rem var(--color-top-borders);
+    }
+
+/* ===+===
+  SPECIALS
+===+=== */
 .background_navspecials{
   font-size: 1rem;
   background-color: grey;
@@ -148,85 +177,67 @@ section{
   font-style: italic;
   color: var(--color-letter-titles);
 }
-/* ADD AN OR SECTION FOR RIGHT  */
+  /* ADD AN OR SECTION FOR RIGHT  */
 
 
 
 /* ===+===
-    ABOUT
-   ===+=== */
-   .section_about {
-    margin: 1rem;
-    align-items: center;
-    display: inline-flex;
-  }
-  .about_title {
-    margin: auto;
-    font-size: 5rem;
-    align-content: center;
-    padding: .5rem;
-  }
-  .about_details {
-    margin: auto;
-    float:left;
-    position: static;
-    color: var(--color-letter-primary);
-  }
-
-  .about_fotografia {
-    height: auto;  
-    width: 75rem;
-    /* margin: auto 8rem; */
-    float: right;
-    position:static;
-    border: solid .1rem var(--color-top-borders);
-    }
-
-
-
-/* ===+===
-    BUNDLE
-   ===+=== */
-.section_bundle {
-  margin: auto;
-  width: fit-content;
-  display: grid;
-  }
-.swiperz_container{
+  BUNDLE
+===+=== */
+.container_bundle{
   background-color: var(--color-background-secondary);
-  color: var(--color-letter-primary);
-  /* max-width: 117rem; */
+  color: var(--color-letter-titles);
+  display: grid;
+  margin: 1rem;
   padding: 1.5rem;
   border-radius: 5px;
-  height: 40rem;
-
-  margin: 1rem;
-  align-items: center;
-  /* gap: 1rem; */
-  }
-.swiperz_title{
+}
+.body_bundle{
+  color: var(--color-letter-primary);
   margin: auto;
-  width: fit-content;
-  color: var(--color-letter-titles);
+  max-width: fit-content;
+  display: inline-flex;
+}
+.title_bundle{
+  margin: auto;
+  padding: 1.5rem;
+  font-size: calc(3rem + 2vmin);
+}
+.card_img{
+  max-width: max-content;
+  margin: auto;
+  background-color: black;
+  height: 250px;
 }
 .bundle_title{
+  margin: auto;
+  max-width: fit-content;
   color: var(--color-letter-titles);
+  /* background-color: red; */
 }
-  /* KEEPS SPREADING! :O FIXED ;):)*/
-
-  
+.bundle_text{
+  margin: auto;
+  max-width: fit-content;
+  font-size: medium;
+}
 
 
 /* ===+===
-    SCHEDULE
-   ===+=== */
+ SCHEDULE
+===+=== */
 .section_schedule {
   width: auto;
-  margin: fit-content;
   display:block;
+  margin: 1rem;
+  align-items: center;
 }
 .section_container{
   display: flex;
+}
+.section_schedule > h2{
+  font-size: 5rem;
+  margin: auto;
+  max-width: fit-content;
 }
 .container_schedule {
   margin: auto;
@@ -247,9 +258,8 @@ section{
   margin: 1.5rem auto;
   border-radius: 5px;
   overflow: hidden;
-  width: fit-content;
   text-align: center;
-  max-width: fit-content;
+  max-width: 35%;
   transition: var(--transition);
   
   /* background: url('../utils//images/formbackground.jpg'); */
@@ -271,7 +281,8 @@ form > label , input {
 form > input {
   background: rgb(220,220,220);
 }
-
+.menu_dropdown{
+}
 
 
 /* ===+===
@@ -288,15 +299,6 @@ form > input {
   /* left:0; */
 }
 
-
-
-/* ===+===
-    BUNDLES
-   ===+=== */
-.section_bundle{
-  margin: auto;
-  width: fit-content;
-}
 
 
 /* ===+===

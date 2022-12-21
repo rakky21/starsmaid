@@ -4,7 +4,7 @@ const Nav = () => {
   return (
     <section className="section_nav">
       <h1 className="title_nav">
-        Stars<span className="maid">Maid</span> Inc
+        Stars<span className="maid">Maid</span> Renovations Inc
       </h1>
       <div className="container_nav">
         <ul className="ul_login">
