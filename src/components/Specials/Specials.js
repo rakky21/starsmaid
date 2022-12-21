@@ -53,7 +53,10 @@ const Specials = () => {
           NEXT CLEANING OR RENOVATION SERVICE
         </p>
       </div>
+      <div className="list_bundle">
+
       <Bundle listBundles={bundles} key={setBundles} />
+      </div>
     </div>
   );
 };

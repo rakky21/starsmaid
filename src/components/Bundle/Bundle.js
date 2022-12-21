@@ -16,7 +16,7 @@ function Bundle({ listBundles }) {
       >
         {listBundles.map((bundle) => (
           <SwiperSlide className="body_bundle" key={bundle.id}>
-            <div className="bundle swiperz_slider col">
+            <div className="bundle card swiperz_slider col">
               <img
                 src={bundle.fotos}
                 className="bundle-img card_img"
@@ -24,17 +24,16 @@ function Bundle({ listBundles }) {
               />
               <h3 className="bundle_title">{bundle.name}</h3>
               <small className="bundle_text">{bundle.description}</small>
-              <div>
+         
                 <a
                   className="btn"
-                  href={bundle.href}
                   target="_blank"
                   rel="noreferrer noopener"
                 >
                   {" "}
                   Select{" "}
                 </a>
-              </div>
+          
             </div>
           </SwiperSlide>
         ))}

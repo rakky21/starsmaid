@@ -19,13 +19,13 @@ const Nav = () => {
       <div className="container_navdos">
         <ul className="ul_nav">
           <li>
-            <a href="#anchor_home">Home</a>
+            <a href="#home">Home</a>
           </li>
           <li>
-            <a href="#anchor_appointments">Appointments</a>
+            <a href="#bundles">Bundles</a>
           </li>
           <li>
-            <a href="#anchor_media">Bundles</a>
+            <a href="#appointments">Appointments</a>
           </li>
         </ul>
       </div>
