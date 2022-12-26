@@ -1,48 +1,40 @@
 {
-  "name": "starsmaids",
-  "version": "0.1.0",
+  "homepage": "https://github.com/rakky21/starsmaid#readme",
+  "name": "starsmaid",
+  "version": "1.0.0",
   "private": true,
-  "dependencies": {
-    "@progress/kendo-date-math": "^1.5.7",
-    "@progress/kendo-drawing": "^1.16.3",
-    "@progress/kendo-licensing": "^1.2.2",
-    "@progress/kendo-react-animation": "^5.5.0",
-    "@progress/kendo-react-buttons": "^5.5.0",
-    "@progress/kendo-react-common": "^5.5.0",
-    "@progress/kendo-react-dateinputs": "^5.5.0",
-    "@progress/kendo-react-dialogs": "^5.5.0",
-    "@progress/kendo-react-dropdowns": "^5.5.0",
-    "@progress/kendo-react-form": "^5.5.0",
-    "@progress/kendo-react-inputs": "^5.5.0",
-    "@progress/kendo-react-intl": "^5.5.0",
-    "@progress/kendo-react-popup": "^5.5.0",
-    "@progress/kendo-react-scheduler": "^5.5.0",
-    "@progress/kendo-react-treeview": "^5.5.0",
-    "@progress/kendo-theme-default": "^5.5.0",
-    "@testing-library/jest-dom": "^5.16.1",
-    "@testing-library/react": "^12.1.2",
-    "@testing-library/user-event": "^13.5.0",
-    "apollo-client": "^2.6.10",
-    "apollo-server-express": "^3.11.1",
-    "react": "^17.0.2",
-    "react-bootstrap": "^2.7.0",
-    "react-calendar": "^3.7.0",
-    "react-dom": "^17.0.2",
-    "react-scripts": "^2.1.8",
-    "swiper": "^8.4.5",
-    "web-vitals": "^2.1.4"
-  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rakky21/starsmaid.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rakky21/starsmaid/issues"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^3.10.0",
+    "dotenv": "^16.0.3",
+    "emailjs-com": "^3.2.0",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.7.0",
+    "react-calendar": "^4.0.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1",
+    "react-scripts": "^5.0.1",
+    "swiper": "^8.4.5",
+    "watch": "^1.0.2",
+    "web-vitals": "^3.1.0"
   },
   "browserslist": {
     "production": [
@@ -56,16 +48,7 @@
       "last 1 safari version"
     ]
   },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rakky21/starsmaid.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rakky21/starsmaid/issues"
-  },
-  "homepage": "https://github.com/rakky21/starsmaid#readme"
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
+  }
 }

@@ -1,21 +1,13 @@
 import React, { useState } from "react";
-
-// import NavBackground from "../../utils/images/navigator_backgroundF.jpg";
 import Bundle from "../Bundle/Bundle";
-
-// import fotos from "../../utils/images/plaster.jpg";
 
 const {
   aboutfotografia,
   colorpanels,
   formbackground,
-  homedisplay,
-  navigator_background,
   navigator_backgroundF,
-  paintingbrush,
   planos,
-  plaster,
-} = require("../../utils/images/listadeFotos");
+} = require("../../utils/images");
 
 const Specials = () => {
   const [bundles, setBundles] = useState([

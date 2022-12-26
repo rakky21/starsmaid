@@ -10,7 +10,8 @@ function Bundle({ listBundles }) {
         modules={[Pagination, Navigation]}
         spaceBetween={30}
         slidesPerView={3}
-        navi gation
+        navi
+        gation
         pagination={{ clickable: true }}
         className="swiper_container"
       >
@@ -24,16 +25,15 @@ function Bundle({ listBundles }) {
               />
               <h3 className="bundle_title">{bundle.name}</h3>
               <small className="bundle_text">{bundle.description}</small>
-         
-                <a
-                  className="btn"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                >
-                  {" "}
-                  Select{" "}
-                </a>
-          
+              <a
+                href={bundle.selected}
+                className="btn"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                {" "}
+                Select{" "}
+              </a>
             </div>
           </SwiperSlide>
         ))}
