@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Bundle from "../Bundle/Bundle";
+import Bundle from "../Bundle";
 
 const {
   aboutfotografia,
@@ -7,7 +7,7 @@ const {
   formbackground,
   navigator_backgroundF,
   planos,
-} = require("../../utils/images");
+} = require("../../assets/images/");
 
 const Specials = () => {
   const [bundles, setBundles] = useState([

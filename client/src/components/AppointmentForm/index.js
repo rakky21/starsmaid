@@ -1,27 +1,50 @@
 import React, { useState, useRef } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 
-import { useMutation } from '@apollo/client';
-import { ADD_APPOINTMENT } from '../../utils/mutations';
-import { QUERY_APPOINTMENTS, QUERY_ME } from '../../utils/queries';
+import { useMutation } from "@apollo/client";
+import { ADD_APPOINTMENT } from "../../utils/mutations";
+import { QUERY_APPOINTMENTS, QUERY_ME } from "../../utils/queries";
 
-import emailjs from "emailjs-com";
+import auth from "../../utils/auth";
 
-function Form() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [fecha, setFecha] = useState("");
+function AppointmentForm() {
+  // const [name, setName] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [phone, setPhone] = useState("");
+  // const [fecha, setFecha] = useState("");
 
-  const form = useRef();
-  const sendEmail = (e) => {
+  const [formState, setFormState] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    fecha: "",
+  });
+  const [addAppointment, { error }] = useMutation(ADD_APPOINTMENT);
+
+  const handleChange = (event) => {
+    const { name, value, email, phone, fecha } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+      [email]: value,
+      [phone]: value,
+      [fecha]: value,
+    });
+  };
+
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    emailjs.sendForm(
-      "service_i4be4im",
-      "template_9nsiyeb",
-      form.current,
-      "ZzbtA-4C5mnas6mko"
-    );
+
+    try {
+      const { data } = await addAppointment({
+        variables: { ...formState },
+      });
+
+      auth.login(data.addAppointment.token);
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   return (
@@ -29,11 +52,11 @@ function Form() {
       <div className="form_heading">
         <p>FILL OUT FORM TO SCHEDULE AN APPOINTMENT</p>
       </div>
-      <form className="contact_form" ref={form} onSubmit={sendEmail}>
+      <form className="contact_form" onSubmit={handleFormSubmit}>
         <label for="name">Enter name:</label>
         <input
           required
-          value={name}
+          value={formState.name}
           onChange={(e) => setName(e.target.value)}
           type="text"
           placeholder="Your Name"
@@ -43,7 +66,7 @@ function Form() {
         <label for="email">Email address:</label>
         <input
           required
-          value={email}
+          value={formState.email}
           onChange={(e) => setEmail(e.target.value)}
           type="text"
           placeholder="Email Address"
@@ -53,7 +76,7 @@ function Form() {
         <label for="phone"> Phone Number:</label>
         <input
           required
-          value={phone}
+          value={formState.phone}
           onChange={(e) => setPhone(e.target.value)}
           type="number"
           placeholder="Phone Number"
@@ -63,7 +86,7 @@ function Form() {
         <label for="date_appt"> Date:</label>
         <input
           required
-          value={fecha}
+          value={formState.fecha}
           type="date"
           placeholder="Appointment Date"
           name="fecha"
@@ -94,4 +117,4 @@ function Form() {
   );
 }
 
-export default Form;
+export default AppointmentForm;

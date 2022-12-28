@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 
-import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 
-import Form from "../AppointmentForm/index";
+import AppointmentForm from "../AppointmentForm/index";
 
 const Schedule = () => {
   const [value, onChange] = useState(new Date());
@@ -11,7 +10,7 @@ const Schedule = () => {
     <section className="section_schedule">
       <h2> SCHEDULE AN ESTIMATE</h2>
       <div className="section_container">
-        <Form />
+        <AppointmentForm />
       </div>
     </section>
   );

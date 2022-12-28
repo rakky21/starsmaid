@@ -1,4 +1,5 @@
 import React from "react";
+import { Link} from "react-router-dom"
 
 const Nav = () => {
   return (
@@ -9,8 +10,18 @@ const Nav = () => {
       <div className="container_nav">
         <ul className="ul_login">
           <li>
-            <a href="login"> Login</a>
+            <Link>
+              <a href="login"> Login</a>
+            </Link>
           </li>
+
+          {/* IF LOGGED IN DISPLAY THIS */}
+          {/* <li>
+            <a href="/" onClick={() => Auth.logout()}>
+              Logout
+            </a>
+          </li> */}
+
           <li>
             <a href="Signup"> SignUp</a>
           </li>
@@ -19,13 +30,19 @@ const Nav = () => {
       <div className="container_navdos">
         <ul className="ul_nav">
           <li>
-            <a href="home">Home</a>
+            <Link>
+              <a href="home">Home</a>
+            </Link>
           </li>
           <li>
-            <a href="bundles">Bundles</a>
+            <Link>
+              <a href="bundles">Bundles</a>
+            </Link>
           </li>
           <li>
-            <a href="appointments">Appointments</a>
+            <Link>
+              <a href="appointments">Appointments</a>
+            </Link>
           </li>
         </ul>
       </div>

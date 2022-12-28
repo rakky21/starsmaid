@@ -18,7 +18,7 @@ const Home = () => {
       <div className="flex-row justify-space-between">
         {loggedIn && (
           <div className="col-12 mb-3">
-            <AppoitnmentForm />
+            <AppointmentForm />
           </div>
         )}
         <div className={`col-12 mb-3 ${loggedIn && "col-lg-8"}`}>

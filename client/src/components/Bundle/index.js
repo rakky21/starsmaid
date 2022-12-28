@@ -12,7 +12,6 @@ function Bundle({ listBundles }) {
         slidesPerView={3}
         navigation
         pagination={{ clickable: true }}
-        className="swiper_container"
       >
         {listBundles.map((bundle) => (
           <SwiperSlide className="body_bundle" key={bundle.id}>

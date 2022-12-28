@@ -8,18 +8,18 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-import Specials from "./components/Specials/Specials";
-import Footer from "./components/Footer/Footer";
-import Nav from "./components/Nav/Nav";
-import About from "./components/About/About";
-import Schedule from "./components/Schedule/Schedule";
+import Specials from "./components/Specials";
+import Footer from "./components/Footer";
+import Nav from "./components/Nav/";
 
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
+import About from "./pages/About";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import SingleAppointment from "./pages/SingleAppointment";
 import NoMatch from "./pages/NoMatch";
+import Schedule from "./components/Schedule";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -61,6 +61,9 @@ function App() {
               <Route component={NoMatch} />
             </Routes>
           </div>
+          <About />
+          <Specials/>
+          <Schedule/>
           <Footer />
         </div>
       </Router>

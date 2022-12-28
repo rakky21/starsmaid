@@ -12,12 +12,17 @@ const appointmentSchema = new Schema(
       default: Date.now,
       get: (timestamp) => dateFormat(timestamp),
     },
+    appointmentDate: {
+      type: Date,
+      required: "You must select a time and day",
+    },
     appointmentText: {
       type: String,
-      required: "You must leave a comment!",
+      required: "Leave a comment!",
       minlength: 2,
       maxlength: 280,
     },
+    bundles: [],
   },
   {
     toJSON: {

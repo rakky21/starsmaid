@@ -1,6 +1,6 @@
 import React from "react";
 
-const { aboutfotografia } = require("../../utils/images");
+const { aboutfotografia } = require("../assets/images");
 const About = () => {
   return (
     <section className="section_about">
