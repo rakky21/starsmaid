@@ -38,6 +38,7 @@ const authLink = setContext((_, { headers }) => {
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
+  uri: "graphql",
 });
 
 function App() {
@@ -62,8 +63,8 @@ function App() {
             </Routes>
           </div>
           <About />
-          <Specials/>
-          <Schedule/>
+          <Specials />
+          <Schedule />
           <Footer />
         </div>
       </Router>

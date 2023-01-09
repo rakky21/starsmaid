@@ -1,5 +1,5 @@
 const { json } = require("express");
-const { Appointment } = require("../../../server/models");
+const { Appointment } = require("../../models");
 
 const appointmentController = {
   getAllAppointment(req, res) {
