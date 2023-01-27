@@ -4,7 +4,7 @@ import Bundle from "../Bundle";
 const {
   aboutfotografia,
   colorpanels,
-  formbackground,
+  secondoBackground,
   navigator_backgroundF,
   planos,
 } = require("../../assets/images/");
@@ -27,7 +27,7 @@ const Specials = () => {
       id: 2,
       name: "Offices",
       description: "This is the bundle information",
-      fotos: formbackground,
+      fotos: secondoBackground,
     },
     {
       id: 1,

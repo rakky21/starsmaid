@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "type": "module",
   "scripts": {
     "demon": "nodemon server.js",
     "watch": "nodemon server.js",
@@ -13,10 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@apollo/server": "^4.3.0",
-    "body-parser": "^1.20.1",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
+    "apollo-datasource-rest": "^0.11.0",
+    "apollo-server": "^3.0.0",
     "express": "^4.18.2",
     "graphql": "^16.6.0",
     "jsonwebtoken": "^8.5.1",
@@ -24,6 +21,7 @@
     "stripe": "^11.5.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "dotenv": "^16.0.3"
   }
 }

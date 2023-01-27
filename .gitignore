@@ -12,11 +12,11 @@ client/public
 
 # testing
 /coverage
+configs
 .env
 
 # production
 /build
-
 # misc
 .DS_Store
 .env.local

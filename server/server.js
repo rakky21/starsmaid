@@ -1,18 +1,35 @@
-import { ApolloServer } from "@apollo/server";
-import { startStandaloneServer } from "@apollo/server/standalone";
+const { ApolloServer } = require("apollo-server");
+const { typeDefs } = require("./src/schemas/");
+const path = require("path");
 
-import express from "express";
-
-const app = express();
-const httpServer = http.createServer(app);
+const mocks = {
+  Query: () => ({
+    listaUsers: () => [...new Array(3)],
+  }),
+  User: () => ({
+    username: "Patrick",
+    id: 21,
+    email: "e@e.com",
+    phone: "333",
+    scheduledAppointments: () => {
+      return {
+        appointmentDate: "2/21/2023",
+        createdAt: "1/25/2023",
+        username: "Patrick",
+      };
+    },
+  }),
+};
 
 const server = new ApolloServer({
   typeDefs,
-  resolvers,
+  mocks: true,
 });
 
-const { url } = await startStandaloneServer(server, {
-  listen: { port: 4000 },
+server.listen().then(() => {
+  console.log(`
+    🚀  Server is running!
+    🔉  Listening on port 4000
+    📭  Query at http://localhost:4000
+  `);
 });
-
-console.log(`🚀  Server ready at: ${url}`);

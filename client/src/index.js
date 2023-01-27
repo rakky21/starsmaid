@@ -1,16 +1,14 @@
-import React, { useEffect } from "react";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import React from "react";
 import { createRoot } from "react-dom/client";
 import "./utils/style.css";
 import App from "./App";
 
-function AppWithCallbackAfterRender() {
-  useEffect(() => {
-    console.log("rendered");
-  });
-
-  return <App tab="home" />;
-}
+const client = new ApolloClient({
+  uri: "http://localhost:4000",
+  cache: new InMemoryCache(),
+});
 
 const container = document.getElementById("root");
 const root = createRoot(container);
-root.render(<AppWithCallbackAfterRender />);
+root.render(<App />);

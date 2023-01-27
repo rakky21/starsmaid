@@ -24,7 +24,6 @@ function Bundle({ listBundles }) {
               <h3 className="bundle_title">{bundle.name}</h3>
               <small className="bundle_text">{bundle.description}</small>
               <a
-                href={bundle.selected}
                 className="btn"
                 target="_blank"
                 rel="noreferrer noopener"

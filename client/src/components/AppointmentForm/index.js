@@ -13,7 +13,7 @@ function AppointmentForm() {
   // const [phone, setPhone] = useState("");
   // const [fecha, setFecha] = useState("");
 
-  const [formState, setFormState] = useState({
+  const [questionesState, setFormState] = useState({
     name: "",
     email: "",
     phone: "",
@@ -25,7 +25,7 @@ function AppointmentForm() {
     const { name, value, email, phone, fecha } = event.target;
 
     setFormState({
-      ...formState,
+      ...questionesState,
       [name]: value,
       [email]: value,
       [phone]: value,
@@ -38,7 +38,7 @@ function AppointmentForm() {
 
     try {
       const { data } = await addAppointment({
-        variables: { ...formState },
+        variables: { ...questionesState },
       });
 
       auth.login(data.addAppointment.token);
@@ -56,7 +56,7 @@ function AppointmentForm() {
         <label for="name">Enter name:</label>
         <input
           required
-          value={formState.name}
+          value={questionesState.name}
           onChange={(e) => setName(e.target.value)}
           type="text"
           placeholder="Your Name"
@@ -66,7 +66,7 @@ function AppointmentForm() {
         <label for="email">Email address:</label>
         <input
           required
-          value={formState.email}
+          value={questionesState.email}
           onChange={(e) => setEmail(e.target.value)}
           type="text"
           placeholder="Email Address"
@@ -76,7 +76,7 @@ function AppointmentForm() {
         <label for="phone"> Phone Number:</label>
         <input
           required
-          value={formState.phone}
+          value={questionesState.phone}
           onChange={(e) => setPhone(e.target.value)}
           type="number"
           placeholder="Phone Number"
@@ -86,7 +86,7 @@ function AppointmentForm() {
         <label for="date_appt"> Date:</label>
         <input
           required
-          value={formState.fecha}
+          value={questionesState.fecha}
           type="date"
           placeholder="Appointment Date"
           name="fecha"

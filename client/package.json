@@ -23,8 +23,9 @@
     "url": "https://github.com/rakky21/starsmaid/issues"
   },
   "dependencies": {
-    "@apollo/client": "^3.7.3",
+    "@apollo/client": "^3.7.5",
     "@emailjs/browser": "^3.10.0",
+    "bootstrap": "^5.2.3",
     "dotenv": "^16.0.3",
     "graphql": "^16.6.0",
     "jwt-decode": "^3.1.2",
