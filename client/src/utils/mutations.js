@@ -29,7 +29,7 @@ export const ADD_APPOINTMENT = gql`
     addAppointment(appointmentText: $appointmentText) {
       _id
       appointmentText
-      createdAt
+      scheduledOn
       username
     }
   }

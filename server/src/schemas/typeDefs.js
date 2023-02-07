@@ -4,6 +4,7 @@ const typeDefs = `#graphql
 
   type Query {
     listaUsers: [User]
+    scheduledAppointments:[Appointment]
   }
 
   type User {
@@ -18,9 +19,13 @@ const typeDefs = `#graphql
     id: ID!
     username: String!
     appointmentDate: String!
-    createdAt: String!
+    scheduledOn: String!
   }
-`;
+
+#   type Mutation {
+#     login(email:String!, password:String!): Auth
+#     addUser(username:String!, email:String!, password:String!): Auth
+#   }
+# `;
 
 module.exports = typeDefs;
- 

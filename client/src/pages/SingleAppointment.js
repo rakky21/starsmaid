@@ -24,7 +24,7 @@ const SingleAppointment = (props) => {
           <span style={{ fontWeight: 700 }} className="text-light">
             {appointment.username}
           </span>{" "}
-          appointment on {appointment.createdAt}
+          appointment on {appointment.scheduledOn}
         </p>
         <div className="card-body">
           <p>{appointment.appointmentText}</p>

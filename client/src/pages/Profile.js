@@ -2,7 +2,7 @@ import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 
 import AppointmentForm from '../components/AppointmentForm/index';
-import AppointmentList from '../components/AppointmentList';
+import AppointmentList from '../components/ScheduledAppointments';
 
 import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';

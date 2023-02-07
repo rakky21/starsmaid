@@ -14,7 +14,7 @@ const mocks = {
     scheduledAppointments: () => {
       return {
         appointmentDate: "2/21/2023",
-        createdAt: "1/25/2023",
+        scheduledOn: "1/25/2023",
         username: "Patrick",
       };
     },

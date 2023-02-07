@@ -1,52 +1,48 @@
 import React from "react";
-import { Link} from "react-router-dom"
+import { Link } from "react-router-dom";
+import Auth from "../../utils/auth";
 
 const Nav = () => {
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
   return (
-    <section className="section_nav">
+    <nav className="nav_nav">
       <h1 className="title_nav">
         Stars<span className="maid">Maid</span> Renovations Inc
       </h1>
       <div className="container_nav">
         <ul className="ul_login">
-          <li>
-            <Link>
-              <a href="login"> Login</a>
-            </Link>
-          </li>
-
-          {/* IF LOGGED IN DISPLAY THIS */}
-          {/* <li>
-            <a href="/" onClick={() => Auth.logout()}>
-              Logout
+          {Auth.loggedIn() ? (
+            <a href="/" onClick={logout}>
+              Loggout
             </a>
-          </li> */}
-
-          <li>
-            <a href="Signup"> SignUp</a>
-          </li>
+          ) : (
+            <>
+              <Link to="/login" onClick={() => Login}>
+                {" "}
+                Login
+              </Link>
+              <Link
+                to="/signup"
+                // onClick={() => Auth.Signup}
+              >
+                {" "}
+                SignUp
+              </Link>
+            </>
+          )}
         </ul>
       </div>
       <div className="container_navdos">
         <ul className="ul_nav">
-          <li>
-            <Link>
-              <a href="home">Home</a>
-            </Link>
-          </li>
-          <li>
-            <Link>
-              <a href="bundles">Bundles</a>
-            </Link>
-          </li>
-          <li>
-            <Link>
-              <a href="appointments">Appointments</a>
-            </Link>
-          </li>
+          <Link to="/">Home</Link>
+          <Link to="/bundles">Bundles</Link>
+          <Link to="/appointments">Appointments</Link>
         </ul>
       </div>
-    </section>
+    </nav>
   );
 };
 

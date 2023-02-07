@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 
 const ApointmentList = ({ appointments, title }) => {
   if (!appointments.length) {
-    return <h3>No Appointments Created</h3>;
+    return <h3>No appointments scheduled</h3>;
   }
+  console.log(appointments);
 
   return (
     <div>
@@ -20,7 +21,7 @@ const ApointmentList = ({ appointments, title }) => {
               >
                 {appointment.username}
               </Link>{" "}
-              appointment on {appointment.createdAt}
+              appointment on {appointment.scheduledOn}
             </p>
             <div className="card-body">
               <Link to={`/appointment/${appointment._id}`}>

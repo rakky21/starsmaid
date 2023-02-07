@@ -1,12 +1,13 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const QUERY_APPOINTMENTS = gql`
-  query appointments($username: String) {
-    appointments(username: $username) {
-      _id
-      appointmentText
-      createdAt
-      username
+  query ListaCitas {
+    listaUsers {
+      scheduledAppointments {
+        username
+        appointmentDate
+        scheduleOn
+      }
     }
   }
 `;
@@ -14,9 +15,9 @@ export const QUERY_APPOINTMENTS = gql`
 export const QUERY_APPOINTMENT = gql`
   query appointment($id: ID!) {
     appointment(_id: $id) {
-      _id
+      id
       appointmentText
-      createdAt
+      scheduleOn
       username
     }
   }
@@ -25,13 +26,13 @@ export const QUERY_APPOINTMENT = gql`
 export const QUERY_USER = gql`
   query user($username: String!) {
     user(username: $username) {
-      _id
+      id
       username
       email
       appointments {
-        _id
+        id
         appoitnmentText
-        createdAt
+        scheduleOn
       }
     }
   }
@@ -40,24 +41,28 @@ export const QUERY_USER = gql`
 export const QUERY_ME = gql`
   {
     me {
-      _id
+      id
       username
       email
       appointments {
-        _id
+        id
         appointmentText
-        createdAt
+        scheduleOn
       }
     }
   }
 `;
 
-export const QUERY_ME_BASIC = gql`
-  {
-    me {
-      _id
+export const QUERY_USERS = gql`
+  query getUsers {
+    listaUsers {
       username
       email
+      phone
+      scheduledAppointments {
+        appointmentDate
+        username
+      }
     }
   }
 `;
