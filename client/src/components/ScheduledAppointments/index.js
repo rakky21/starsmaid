@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ApointmentList = ({ appointments, title }) => {
+const scheduledAppointments = ({ appointments, title }) => {
   if (!appointments.length) {
     return <h3>No appointments scheduled</h3>;
   }
@@ -38,4 +38,4 @@ const ApointmentList = ({ appointments, title }) => {
   );
 };
 
-export default ApointmentList;
+export default scheduledAppointments;

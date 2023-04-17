@@ -1,5 +1,5 @@
 const { ApolloServer } = require("apollo-server");
-const { typeDefs } = require("./src/schemas/");
+const { typeDefs, resolvers } = require("./src/schemas/");
 const path = require("path");
 
 const mocks = {
@@ -23,6 +23,7 @@ const mocks = {
 
 const server = new ApolloServer({
   typeDefs,
+  resolvers,
   mocks: true,
 });
 

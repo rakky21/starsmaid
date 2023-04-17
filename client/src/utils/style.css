@@ -47,7 +47,6 @@ h6 {
 section{
   margin: auto;
   color: var(--color-top-borders2);
-  background-color: var(--color-background-secondary);
   font-size: calc(1.5rem + 2vmin);
   overflow: hidden;
   text-align: center;
@@ -168,21 +167,13 @@ section{
   BUNDLE
 ===+=== */
 .container_bundle{
-  background-color: var(--color-background-secondary);
-  color: var(--color-letter-titles);
   margin: 1rem;
   padding: 1.5rem;
-  border-radius: 5px;
-  overflow: hidden;
-  border-radius: 15px;
-  text-align: center;
-  display:block;
 }
 .title_bundle{
   padding: 1.5rem;
   font-size: calc(2.5rem + 2vmin);
 }
-
 .card{
   overflow: auto;
   background-color: var(--color-background-primary);
@@ -193,16 +184,8 @@ section{
   display: flex;
   align-items: center;
 }
-#root > main > div > div > div.swiper-wrapper > div.swiper-slide{
-  display: inline-flex;
-  
-}
 .body_bundle{
   color: var(--color-letter-primary);
-  /* display: flex; */
-}
-#root > main > div > div > div.swiper-wrapper{
-  display: inline-flex;
 }
 .card_img{
   max-width: max-content;
@@ -224,12 +207,8 @@ section{
  SCHEDULE
 ===+=== */
 .section_schedule {
-  display:flex;
   margin: 1rem;
   align-items: center;
-}
-.section_container{
-  display: block;
 }
 .section_header{
   font-size: calc(2.5rem + 2vmin);
@@ -247,13 +226,11 @@ section{
 .section_form > form{
   border: 1px solid transparent;
   padding: 1.5rem; 
-  display: grid;
 }
 form > label , input {
   width: 60%;
   margin: auto;
   margin-bottom: 0.5rem;
-  display: grid;
 }
 form > input {
   background: rgb(220,220,220);

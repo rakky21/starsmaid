@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
-import Auth from "../utils/auth";
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -10,21 +9,17 @@ const Signup = () => {
     password: "",
   });
   const [addUser, { error }] = useMutation(ADD_USER);
-
   // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
-
     setFormState({
       ...formState,
       [name]: value,
     });
   };
-
   // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
     try {
       const { data } = await addUser({
         variables: { ...formState },
@@ -37,7 +32,7 @@ const Signup = () => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
+    <div className="flex-row justify-center mb-4">
       <div className="col-12 col-md-6">
         <div className="card">
           <h4 className="card-header">Sign Up</h4>
@@ -88,7 +83,7 @@ const Signup = () => {
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 };
 
