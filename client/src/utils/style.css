@@ -25,13 +25,20 @@ img , picture, svg, video {
 }
 body {
   margin: auto;
-  font-family: 'Poppins', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: whitesmoke;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
   font-weight: 500;
   max-width: 100%;
+  padding: 0;
+  color: var(--color-letter-primary);
 }
 h1,
 h2,
@@ -40,6 +47,8 @@ h4,
 h5,
 h6 {
   font-weight: 700;
+  font-size: calc(5rem + 2vmin);
+  padding:0%;
   margin: 0;
   color: var(--dark);
   line-height: 1.25;
@@ -53,6 +62,8 @@ section{
   padding: 2rem;
   border-radius: .5rem;
   display: flex;
+  gap: 1.5rem;
+  justify-content: center;
 }
 .btn {
   width: 11rem;
@@ -166,23 +177,29 @@ section{
 /* ===+===
   BUNDLE
 ===+=== */
+.TESTCONT {
+  display: flex;
+  margin: auto;
+}
 .container_bundle{
   margin: 1rem;
   padding: 1.5rem;
+  width: 120rem;
 }
 .title_bundle{
   padding: 1.5rem;
+  margin: 0;
   font-size: calc(2.5rem + 2vmin);
 }
 .card{
   overflow: auto;
   background-color: var(--color-background-primary);
-  margin: auto;
-  border: 1px solid transparent;
+  margin: 4rem;
+  border: .1rem solid transparent;
   border-radius: 5px;
   padding: .25rem;
-  display: flex;
   align-items: center;
+  overflow-x: hidden;
 }
 .body_bundle{
   color: var(--color-letter-primary);
@@ -195,8 +212,7 @@ section{
 }
 .bundle_title{
   margin: auto;
-  font-size: 2rem;
-
+  font-size: 1.5rem;
   color: var(--color-letter-titles);
 }
 .bundle_text{

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Bundle from "../components/Bundle";
+import Card from "../components/Card";
 import AppointmentSignup from "../components/AppointmentSignup";
 
 const {
@@ -47,12 +47,10 @@ const Home = () => {
             worry about your home while you continue your daily routine.
           </div>
         </div>
-        {/* WORDING */}
         <img className="about_fotografia" src={aboutfotografia} alt="office" />
       </section>
       <AppointmentSignup />
-      <Bundle listBundles={bundles} key={setBundles} />
-
+      <Card listCards={bundles} key={setBundles} />
     </div>
   );
 };
