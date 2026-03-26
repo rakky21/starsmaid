@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/starsmaid/static/css/main.7e6e8b09.css",
+    "main.js": "/starsmaid/static/js/main.95bfa2ec.js",
+    "static/media/renovation.jpg": "/starsmaid/static/media/renovation.b259ee531c413abc9e1c.jpg",
+    "static/media/primeraPer.jpg": "/starsmaid/static/media/primeraPer.01df819bc63f401f5ce5.jpg",
+    "static/media/contactimg.jpg": "/starsmaid/static/media/contactimg.22955214353b6c6ec0cc.jpg",
+    "static/media/aboutthecomp.jpg": "/starsmaid/static/media/aboutthecomp.011b0702429cf17103a8.jpg",
+    "static/media/icono.png": "/starsmaid/static/media/icono.cd140260bffd642d4d1c.png",
+    "static/media/logo2.png": "/starsmaid/static/media/logo2.c1035ce9d62563e486e2.png",
+    "index.html": "/starsmaid/index.html",
+    "main.7e6e8b09.css.map": "/starsmaid/static/css/main.7e6e8b09.css.map",
+    "main.95bfa2ec.js.map": "/starsmaid/static/js/main.95bfa2ec.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7e6e8b09.css",
+    "static/js/main.95bfa2ec.js"
+  ]
+}
