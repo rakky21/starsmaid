@@ -1,10 +1,33 @@
-/* ── STATE ── */
+const API_URL = "http://localhost:4000/graphql";
+
+// STATE
 const S = {
   user: null,
   booking: { date: null, time: null, service: null },
   calY: new Date().getFullYear(),
   calM: new Date().getMonth(),
 };
+
+// GRAPHQL HELPER
+async function gqlRequest(query, variables = {}) {
+  const token = localStorage.getItem("token");
+
+  const res = await fetch(API_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: token ? `Bearer ${token}` : "",
+    },
+    body: JSON.stringify({ query, variables }),
+  });
+
+  const json = await res.json();
+
+  if (json.errors) {
+    throw new Error(json.error[0].message);
+  }
+  return json.data;
+}
 
 const SERVICES = [
   { name: "Standard Cleaning", cat: "Cleaning", price: "From $89" },
@@ -79,24 +102,103 @@ export function switchTab(tab) {
   document.getElementById("tab-login").classList.toggle("active", login);
   document.getElementById("tab-signup").classList.toggle("active", !login);
 }
-export function doLogin() {
+
+export async function doLogin() {
   const email = document.getElementById("li-email").value.trim();
   const pass = document.getElementById("li-pass").value;
   const err = document.getElementById("li-err");
+
   if (!email || !pass) {
     err.style.display = "flex";
     return;
   }
-  err.style.display = "none";
-  const name = email
-    .split("@")[0]
-    .replace(/[^a-zA-Z]/g, " ")
-    .trim();
-  S.user = {
-    name: name || "User",
-    initials: name.slice(0, 2).toUpperCase() || "U",
-  };
-  afterLogin();
+
+  try {
+    const data = await gqlRequest(
+      `mutation($email:String!, $password: String!) {
+    login(email:$email,password: $password) {
+    token
+    user {id name lastName email} 
+    }
+    }`,
+      { email, password: pass },
+    );
+
+    const { token, user } = data.login;
+
+    localStorage.setItem("token", token);
+
+    S.user = {
+      id: user.id,
+      name: `${user.name} ${user.lastName}`,
+      initials: (user.name[0] + user.lastName[0]).toUpperCase(),
+    };
+    err.style.display = "none";
+
+    afterLogin();
+  } catch (e) {
+    err.style.display = "flex";
+    err.textContent = e.message;
+  }
+}
+
+export function newBooking() {
+  S.booking = { date: null, time: null, service: null };
+
+  buildScheduler(); // rebuild UI
+  nav("scheduler"); // go back to scheduler
+}
+
+// SAVES
+async function saveBooking() {
+  const { date, time, service } = S.booking;
+
+  const data = await gqlRequest(
+    `mutation($userId:ID!, $date:String!, $time:String!, $service: String!) {
+    createAppointment(userId:$userId, date:$date, time:$time, service:$service) {
+    id
+    }}`,
+    {
+      userId: S.user.id,
+      date: getDateKey(date),
+      time,
+      service,
+    },
+  );
+
+  return data.createAppointment;
+}
+// CONFIRM BOOKING
+export async function confirmBooking() {
+  const { date, time, service } = S.booking;
+  const err = document.getElementById("sched-err");
+
+  if (!date || !time || !service) {
+    err.style.display = "flex";
+    return;
+  }
+
+  try {
+    err.style.display = "none";
+
+    const appointment = await saveBooking();
+
+    document.getElementById("conf-name").textContent = S.user.name || "Guest";
+    document.getElementById("conf-service").textContent = service;
+    document.getElementById("conf-date").textContent =
+      date.toLocaleDateString();
+    document.getElementById("conf-time").textContent = time;
+
+    document.getElementById("conf-code").textContent =
+      appointment?.id?.slice(-6)?.toUpperCase() || "N/A";
+
+    nav("confirm");
+
+    showNotif("Appointment Confirmed!", `${service} · ${time}`);
+  } catch (e) {
+    err.style.display = "flex";
+    err.textContent = e.message;
+  }
 }
 export function doSignup() {
   const name = document.getElementById("su-name").value.trim();
@@ -132,6 +234,7 @@ export function afterLogin() {
   nav("scheduler");
 }
 export function logout() {
+  localStorage.removeItem("token");
   S.user = null;
   S.booking = { date: null, time: null, service: null };
   updateNav();
@@ -203,6 +306,7 @@ export function calNext() {
   }
   buildCalendar();
 }
+
 export function selectDay(y, m, d) {
   S.booking.date = new Date(y, m, d);
   S.booking.time = null;
@@ -224,7 +328,8 @@ export function genTimes() {
   return t;
 }
 
-async function fetchBookedTimes(dateKey) {
+// FETCH TIMES
+export async function fetchBookedTimes(dateKey) {
   const res = await fetch("http://localhost:4000/graphql", {
     method: "POST",
     headers: {
@@ -287,6 +392,7 @@ export function buildPills() {
     </div>`;
   }).join("");
 }
+
 export function selectService(name) {
   S.booking.service = name;
   buildPills();
@@ -335,79 +441,6 @@ export function buildScheduler() {
   buildTimeGrid();
   buildPills();
   updateSummary();
-}
-
-/* ── CONFIRM ── */
-export function confirmBooking() {
-  const { date, time, service } = S.booking;
-  const err = document.getElementById("sched-err");
-  if (!date || !time || !service) {
-    err.style.display = "flex";
-    return;
-  }
-
-  const dateKey = getDateKey(date);
-
-  //Initialize if not exists
-  if (!BOOKED[dateKey]) {
-    BOOKED[dateKey] = [];
-  }
-
-  //Prevents double booking
-  if (BOOKED[dateKey].includes(time)) {
-    err.style.display = "flex";
-    err.textContent = "This time is already booked.";
-    return;
-  }
-
-  // Save Booking;
-  async function saveBooking() {
-    const { date, time, service } = S.booking;
-
-    const res = await fetch("http://localhost:4000/graphql", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        authorization: localStorage.getItem("token"),
-      },
-      body: JSON.stringify({
-        query: `
-			mutation($userId: ID!, $date: String!, $time: String!, $service: String!) {
-			createAppointment(userId: $userId, date: $date, time: $time, service: $service) {
-			id
-			}}`,
-        variables: {
-          userID: S.user.id,
-          date: getDateKey(date),
-          time,
-          service,
-        },
-      }),
-    });
-	return await res.json();
-  }
-
-  err.style.display = "none";
-
-  const code = "SM-" + Math.random().toString(36).slice(2, 8).toUpperCase();
-
-  document.getElementById("conf-name").textContent = S.user?.name || "Guest";
-  document.getElementById("conf-service").textContent = service;
-  document.getElementById("conf-date").textContent = date.toLocaleDateString(
-    "en-US",
-    { weekday: "long", month: "long", day: "numeric", year: "numeric" },
-  );
-  document.getElementById("conf-time").textContent = time;
-  document.getElementById("conf-code").textContent = code;
-  nav("confirm");
-  showNotif(
-    "Appointment Confirmed!",
-    `${service} · ${time} · ${date.toLocaleDateString("en-US", { month: "short", day: "numeric" })}`,
-  );
-}
-export function newBooking() {
-  buildScheduler();
-  nav("scheduler");
 }
 
 /* ── NOTIF ── */

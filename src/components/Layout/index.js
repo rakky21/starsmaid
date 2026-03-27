@@ -10,8 +10,8 @@ import {
   doSignup,
   calPrev,
   calNext,
-  confirmBooking,
   newBooking,
+  confirmBooking,
 } from "../../utils/functions.js";
 
 const Layout = ({ children }) => {
@@ -422,7 +422,9 @@ const Layout = ({ children }) => {
               © 2025 StarsMaid. All rights reserved.
             </div>
             <div className="footer-links">
-              <a href="#">Privacy</a>
+              <a href="/" onClick={(e) => e.preventDefault()}>
+                Privacy
+              </a>
               <a href="#">Terms</a>
               <a href="#">Contact</a>
             </div>

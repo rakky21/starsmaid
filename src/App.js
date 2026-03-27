@@ -1,22 +1,12 @@
-import { Routes, Route } from "react-router-dom";
+import { Nav } from "./components/index.js";
+import { AppProvider } from "./utils/AppProvider.js";
+import AppRouter from "./pages/AppRouter";
 
-import Home from "./pages/Home.js";
-import About from "./pages/About.js";
-import NoMatch from "./pages/NoMatch.js";
-import Booking from "./pages/Booking.js";
-import Lobby from "./pages/Lobby.js";
-
-const App = () => {
+export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/starsmaid" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/booking" element={<Booking />} />
-      <Route path="/lobby" element={<Lobby />} />
-      <Route path="*" element={<NoMatch />} />
-    </Routes>
+    <AppProvider>
+      <Nav />
+      <AppRouter />
+    </AppProvider>
   );
-};
-
-export default App;
+}
