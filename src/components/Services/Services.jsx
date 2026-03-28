@@ -6,10 +6,7 @@ const PACKAGES = [
   { emoji: '🧹', name: 'Standard Cleaning', cat: 'Cleaning',   price: 'From $89',  desc: 'Surfaces, floors, bathrooms and kitchen — a thorough clean for everyday freshness.' },
   { emoji: '✨', name: 'Deep Cleaning',      cat: 'Cleaning',   price: 'From $149', desc: 'Full detail clean including inside appliances, baseboards and hard-to-reach areas.' },
   { emoji: '🪟', name: 'Window Cleaning',    cat: 'Cleaning',   price: 'From $65',  desc: 'Streak-free interior and exterior window cleaning for homes and offices.' },
-  { emoji: '🧶', name: 'Carpet Cleaning',    cat: 'Cleaning',   price: 'From $99',  desc: 'Deep-extraction carpet cleaning that removes stains, odours and allergens.' },
   { emoji: '🔧', name: 'Minor Repairs',      cat: 'Renovation', price: 'From $75',  desc: 'Patch drywall, fix doors, replace fixtures — small fixes that make a big difference.' },
-  { emoji: '🚿', name: 'Plumbing Repair',    cat: 'Renovation', price: 'From $95',  desc: 'Leaky faucets, clogged drains, running toilets — fast and reliable solutions.' },
-  { emoji: '⚡', name: 'Electrical Repair',  cat: 'Renovation', price: 'From $110', desc: 'Outlets, switches, fixtures — licensed electricians for safe, compliant repairs.' },
 ];
 
 export default function Services() {
