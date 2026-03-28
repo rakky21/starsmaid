@@ -1,41 +1,61 @@
-import { jwtDecode } from "jwt-decode";
+import { jwtDecode } from 'jwt-decode';
 
-class AuthService {
-  getToken() {
-    return localStorage.getItem("id_token");
-  }
-  login(idToken) {
-    localStorage.setItem("id_token", idToken);
-    // re-directs to homepage/booking
-    window.location.assign("/");
-  }
-  //Get user data from the saved token
-  getProfile() {
-    return jwtDecode(this.getToken());
-  }
-  //check if the user is logged in
+const Auth = {
+  // Save token to localStorage
+  login(token) {
+    localStorage.setItem('id_token', token);
+    window.location.assign('/');
+  },
+
+  // Remove token and reload
+  logout() {
+    localStorage.removeItem('id_token');
+    window.location.assign('/');
+  },
+
+  // Check if user is logged in and token is not expired
   loggedIn() {
     const token = this.getToken();
     return !!token && !this.isTokenExpired(token);
-  }
-  //Check if token is expired
+  },
+
+  // Check if token is expired
   isTokenExpired(token) {
     try {
-      const decoded = jwtDecode(token);
-      if (decoded.exp > Date.now() / 1000) {
-        return false;
-      } else {
-        return true;
-      }
-    } catch (err) {
+      const { exp } = jwtDecode(token);
+      return Date.now() >= exp * 1000;
+    } catch {
       return true;
     }
-  }
-  logout() {
-    localStorage.removeItem("id_token");
-    window.location.assign("/");
-  }
-}
+  },
 
-const Auth = new AuthService();
+  // Get raw token
+  getToken() {
+    return localStorage.getItem('id_token');
+  },
+
+  // Get decoded profile
+  getProfile() {
+    try {
+      return jwtDecode(this.getToken());
+    } catch {
+      return null;
+    }
+  },
+
+  // Get user id from token
+  getUserId() {
+    const profile = this.getProfile();
+    return profile?.data?.id || null;
+  },
+
+  // Get user name initials
+  getInitials() {
+    const profile = this.getProfile();
+    if (!profile?.data) return '??';
+    const { name, lastName } = profile.data;
+    return `${name?.[0] || ''}${lastName?.[0] || ''}`.toUpperCase();
+  },
+};
+
 export default Auth;

@@ -1,0 +1,73 @@
+.notif {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  background: var(--ink);
+  color: #fff;
+  border-radius: var(--r-lg);
+  padding: 16px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  box-shadow: var(--sh-lg);
+  max-width: 340px;
+  animation: slideIn .4s var(--ease) both;
+}
+
+.leaving {
+  animation: slideOut .4s var(--ease) forwards;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(20px) scale(.95); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes slideOut {
+  from { opacity: 1; transform: none; }
+  to   { opacity: 0; transform: translateY(20px) scale(.95); }
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.content { flex: 1; }
+
+.title {
+  font-weight: 700;
+  font-size: .875rem;
+  margin-bottom: 3px;
+}
+
+.body {
+  font-size: .78rem;
+  color: rgba(255, 255, 255, .7);
+  line-height: 1.5;
+}
+
+.close {
+  color: rgba(255, 255, 255, .5);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: color var(--t);
+}
+.close:hover { color: #fff; }
+
+@media (max-width: 480px) {
+  .notif {
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+    max-width: none;
+  }
+}

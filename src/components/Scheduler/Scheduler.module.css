@@ -1,0 +1,310 @@
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 56px 24px;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  align-items: start;
+  gap: 40px;
+}
+
+.main {}
+
+.h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.sub {
+  font-size: .95rem;
+  color: var(--ink-2);
+  margin-bottom: 36px;
+  line-height: 1.6;
+}
+
+/* ── Steps ── */
+.steps {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  gap: 0;
+}
+
+.stepGroup {
+  display: flex;
+  align-items: center;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+
+.stepNum {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--surface-3);
+  color: var(--ink-3);
+  display: grid;
+  place-items: center;
+  font-size: .75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: background var(--t), color var(--t);
+}
+
+.stepDone .stepNum  { background: var(--accent); color: #fff; }
+.stepDone           { color: var(--ink-2); }
+.stepActive .stepNum { background: var(--ink); color: #fff; }
+.stepActive          { color: var(--ink); }
+
+.stepSep {
+  width: 28px;
+  height: 1px;
+  background: var(--border);
+  margin: 0 4px;
+  flex-shrink: 0;
+}
+
+/* ── Card ── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 28px;
+  margin-bottom: 20px;
+}
+
+.cardTitle {
+  font-weight: 700;
+  font-size: .95rem;
+  color: var(--ink);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.cardTitle svg { color: var(--accent); }
+
+.hint {
+  font-size: .85rem;
+  color: var(--ink-3);
+  text-align: center;
+  padding: 16px 0;
+}
+
+/* ── Calendar ── */
+.calNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.calMonth {
+  font-weight: 700;
+  font-size: .95rem;
+  color: var(--ink);
+}
+
+.calBtn {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  background: var(--surface);
+  transition: background var(--t);
+}
+.calBtn:hover { background: var(--surface-2); }
+
+.calGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.calDow {
+  text-align: center;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: var(--ink-3);
+  padding: 4px 0;
+}
+
+.calDay {
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  font-size: .8rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--ink);
+  transition: background var(--t), color var(--t);
+}
+.calDay:hover:not(.calPast):not(.calEmpty) {
+  background: var(--accent-light);
+  color: var(--accent-dark);
+}
+.calEmpty   { pointer-events: none; }
+.calPast    { color: var(--ink-3); pointer-events: none; }
+.calToday:not(.calSelected) {
+  font-weight: 700;
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+}
+.calSelected { background: var(--accent); color: #fff; }
+
+/* ── Time slots ── */
+.timeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.timeSlot {
+  padding: 9px 4px;
+  border-radius: var(--r-sm);
+  border: 1.5px solid var(--border);
+  text-align: center;
+  font-size: .78rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--ink-2);
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  transition: border-color var(--t), background var(--t), color var(--t);
+}
+.timeSlot:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-light);
+}
+.timeSelected {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.timeBooked {
+  background: var(--surface-3);
+  border-color: var(--border);
+  color: var(--ink-3);
+  text-decoration: line-through;
+  cursor: not-allowed;
+  font-size: .72rem;
+}
+.timeBooked small { font-size: .65rem; color: var(--danger); text-decoration: none; }
+
+/* ── Service pills ── */
+.pillList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 16px;
+  border-radius: var(--r);
+  border: 1.5px solid var(--border);
+  cursor: pointer;
+  transition: border-color var(--t), background var(--t);
+}
+.pill:hover, .pillSel {
+  border-color: var(--accent);
+  background: var(--accent-light);
+}
+
+.pillName { font-size: .875rem; font-weight: 600; color: var(--ink); }
+.pillSub  { font-size: .75rem; color: var(--ink-3); margin-top: 2px; }
+
+.pillCheck {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  transition: border-color var(--t), background var(--t);
+}
+.pillCheckSel {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 26px;
+  position: sticky;
+  top: 88px;
+}
+
+.sidebarTitle {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+
+.sumRows {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.sumDivider {
+  height: 1px;
+  background: var(--border);
+  margin: 18px 0;
+}
+
+.sumPlaceholder {
+  border: 1.5px dashed var(--border);
+  border-radius: var(--r);
+  padding: 18px;
+  text-align: center;
+  font-size: .8rem;
+  color: var(--ink-3);
+}
+
+.sumNote {
+  font-size: .8rem;
+  color: var(--ink-2);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .wrap { grid-template-columns: 1fr; }
+  .sidebar { position: static; }
+}
+
+@media (max-width: 600px) {
+  .wrap { padding: 32px 16px; }
+  .timeGrid { grid-template-columns: repeat(2, 1fr); }
+}

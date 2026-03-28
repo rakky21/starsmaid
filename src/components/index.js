@@ -1,5 +1,10 @@
-export { default as Layout } from "./Layout/index.js";
-export { default as Nav } from "./Nav/index.js";
-export { default as Auth } from "./Auth/index.js";
-export { default as Confirm } from "./Confirm/index.js";
-export { default as Scheduler } from "./Scheduler/index.js";
+export { default as Nav          } from './Nav/Nav.jsx';
+export { default as Hero         } from './Hero/Hero.jsx';
+export { default as Services     } from './Services/Services.jsx';
+export { default as About        } from './About/About.jsx';
+export { default as Footer       } from './Footer/Footer.jsx';
+export { default as Login        } from './Auth/Login.jsx';
+export { default as SignUp       } from './Auth/SignUp.jsx';
+export { default as Scheduler    } from './Scheduler/Scheduler.jsx';
+export { default as Confirmation } from './Confirmation/Confirmation.jsx';
+export { default as Notification } from './Notification/Notification.jsx';

@@ -1,0 +1,101 @@
+.wrap {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 64px 24px;
+  text-align: center;
+  animation: fadeUp .4s var(--ease) both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.iconWrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--accent-light);
+  display: grid;
+  place-items: center;
+  margin: 0 auto 24px;
+  color: var(--accent);
+}
+
+.h1 {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.sub {
+  font-size: .95rem;
+  color: var(--ink-2);
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+/* ── Details card ── */
+.card {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 28px;
+  text-align: left;
+  margin-bottom: 28px;
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+}
+
+.sep {
+  height: 1px;
+  background: var(--border);
+}
+
+.rowLabel {
+  font-size: .82rem;
+  color: var(--ink-3);
+  font-weight: 500;
+}
+
+.rowValue {
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.code {
+  background: var(--accent);
+  color: #fff;
+  font-family: monospace;
+  letter-spacing: .12em;
+  font-size: 1rem;
+  padding: 3px 10px;
+  border-radius: 4px;
+}
+
+/* ── Actions ── */
+.actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .wrap { padding: 40px 16px; }
+  .actions { flex-direction: column; }
+  .actions .btn { width: 100%; }
+}
