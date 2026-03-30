@@ -3,10 +3,9 @@ import Auth from '../../utils/auth.js';
 import styles from './Services.module.css';
 
 const PACKAGES = [
-  { emoji: '🧹', name: 'Standard Cleaning', cat: 'Cleaning',   price: 'From $89',  desc: 'Surfaces, floors, bathrooms and kitchen — a thorough clean for everyday freshness.' },
-  { emoji: '✨', name: 'Deep Cleaning',      cat: 'Cleaning',   price: 'From $149', desc: 'Full detail clean including inside appliances, baseboards and hard-to-reach areas.' },
-  { emoji: '🪟', name: 'Window Cleaning',    cat: 'Cleaning',   price: 'From $65',  desc: 'Streak-free interior and exterior window cleaning for homes and offices.' },
-  { emoji: '🔧', name: 'Minor Repairs',      cat: 'Renovation', price: 'From $75',  desc: 'Patch drywall, fix doors, replace fixtures — small fixes that make a big difference.' },
+  { emoji: '🧹', name: 'Standard Cleaning', cat: 'Cleaning', price: 'From $89', desc: 'Surfaces, floors, bathrooms and kitchen — a thorough clean for everyday freshness.' },
+  { emoji: '✨', name: 'Deep Cleaning', cat: 'Cleaning', price: 'From $149', desc: 'Full detail clean including inside appliances, baseboards and hard-to-reach areas.' },
+  { emoji: '🔧', name: 'Minor Repairs', cat: 'Renovation', price: 'From $75', desc: 'Patch drywall, fix doors, replace fixtures — small fixes that make a big difference.' },
 ];
 
 export default function Services() {
@@ -27,7 +26,6 @@ export default function Services() {
             From routine upkeep to full renovations — handled with care and precision.
           </p>
         </div>
-
         <div className={styles.grid}>
           {PACKAGES.map((pkg) => (
             <div key={pkg.name} className={styles.card}>

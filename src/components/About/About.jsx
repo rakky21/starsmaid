@@ -25,14 +25,14 @@ export default function About() {
             exceptional attention to detail and a personal touch that larger
             companies simply can't match.
           </p>
-          <div className={styles.stats}>
+          {/* <div className={styles.stats}>
             {STATS.map((s) => (
               <div key={s.lbl}>
                 <div className={styles.statVal}>{s.val}</div>
                 <div className={styles.statLbl}>{s.lbl}</div>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

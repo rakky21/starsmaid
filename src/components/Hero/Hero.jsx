@@ -29,7 +29,7 @@ const FEATURED = [
         <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
       </svg>
     ),
-    name: 'Minor Repairs',
+    name: 'Handyman Repairs',
     price: 'From $75 · 1–2 hrs',
   },
 ];
@@ -47,7 +47,6 @@ export default function Hero() {
     <section className={styles.hero}>
       <div className={styles.gridBg} />
       <div className={styles.blob} />
-
       <div className={styles.inner}>
         {/* Left copy */}
         <div className={styles.copy}>
@@ -79,14 +78,14 @@ export default function Hero() {
               </svg>
             </button>
           </div>
-          <div className={styles.trust}>
+          {/* <div className={styles.trust}>
             <div className={styles.avatars}>
               {['JR','ML','SK','+'].map((i) => <span key={i}>{i}</span>)}
             </div>
             <div className={styles.trustText}>
-              <strong>500+ clients</strong> trust StarsMaid<br />across the DMV area
+              <strong>Clients</strong> trust StarsMaid<br />across the DMV area
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Right card */}
