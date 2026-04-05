@@ -1,4 +1,112 @@
-const API_URL = "http://localhost:4000/graphql";
+import { gql } from '@apollo/client';
+
+/* ── QUERIES ── */
+
+export const GET_ME = gql`
+  query Me {
+    me {
+      id
+      name
+      lastName
+      email
+      phone
+      role
+    }
+  }
+`;
+
+export const GET_MY_APPOINTMENTS = gql`
+  query MyAppointments {
+    myAppointments {
+      id
+      date
+      time
+      service
+      status
+      confirmation
+      createdAt
+    }
+  }
+`;
+
+export const GET_BOOKED_TIMES = gql`
+  query BookedTimes($date: String!) {
+    bookedTimes(date: $date)
+  }
+`;
+
+/* ── MUTATIONS ── */
+
+export const CREATE_USER = gql`
+  mutation CreateUser(
+    $name: String!
+    $lastName: String!
+    $email: String!
+    $password: String!
+    $phone: String
+  ) {
+    createUser(
+      name: $name
+      lastName: $lastName
+      email: $email
+      password: $password
+      phone: $phone
+    ) {
+      token
+      user {
+        id
+        name
+        email
+      }
+    }
+  }
+`;
+
+export const LOGIN = gql`
+  mutation Login($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
+      token
+      user {
+        id
+        name
+        email
+      }
+    }
+  }
+`;
+
+export const CREATE_APPOINTMENT = gql`
+  mutation CreateAppointment(
+    $date: String!
+    $time: String!
+    $service: String!
+    $notes: String
+  ) {
+    createAppointment(
+      date: $date
+      time: $time
+      service: $service
+      notes: $notes
+    ) {
+      id
+      date
+      time
+      service
+      status
+      confirmation
+    }
+  }
+`;
+
+export const CANCEL_APPOINTMENT = gql`
+  mutation CancelAppointment($id: ID!) {
+    cancelAppointment(id: $id) {
+      id
+      status
+    }
+  }
+`;
+
 
 export async function gqlRequest(query, variables = {}) {
   const token = localStorage.getItem("token");

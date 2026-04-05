@@ -18,7 +18,6 @@ export default function MyAppointments() {
               </div>
               <p style={{ margin:'8px 0' }}>{a.date} · {a.time} · Technician: {a.technician}</p>
               <div style={{ display:'flex', gap:'8px' }}>
-                <button className="btn btn-outline" onClick={() => window.location.replace(`/dashboard/timeline/${a.id}`)}>Timeline</button>
                 <button className="btn btn-ghost" onClick={() => alert('Feature coming soon')}>Reschedule</button>
                 <button className="btn btn-danger" onClick={() => alert('Cancel request submitted')}>Cancel</button>
               </div>

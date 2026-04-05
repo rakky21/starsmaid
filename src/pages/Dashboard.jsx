@@ -11,7 +11,6 @@ export default function Dashboard() {
         <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(190px,1fr))', gap:'14px', marginTop:'24px' }}>
           <Link className="btn btn-outline" to="/dashboard/appointments">My Appointments</Link>
           <Link className="btn btn-outline" to="/dashboard/history">Service History</Link>
-          <Link className="btn btn-outline" to="/dashboard/timeline/1">Service Timeline</Link>
           <Link className="btn btn-outline" to="/account/profile">Profile & Address</Link>
           <Link className="btn btn-outline" to="/account/team">Team Settings</Link>
           <Link className="btn btn-outline" to="/account/rep-contact">Representative Contact</Link>

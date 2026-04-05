@@ -1,9 +1,9 @@
 /* ─── DESIGN TOKENS ─────────────────────────────── */
 :root {
-  --accent:       #1a9e8f;
-  --accent-dark:  #127a6e;
-  --accent-light: #e6f7f5;
-  --accent-mid:   #c2ede8;
+  --accent:       #89CFF0;
+  --accent-dark:  #000080;
+  --accent-light: #B0C4DE;
+  --accent-mid:   #6495ED;
   --ink:          #14181c;
   --ink-2:        #474f5a;
   --ink-3:        #8c95a0;

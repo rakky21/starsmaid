@@ -1,49 +1,201 @@
-.footer {
-  background: var(--ink);
-  color: rgba(255, 255, 255, .7);
-  padding: 40px 0;
+/* ── Outer Footer Wrapper ───────────────────────────────── */
+footer {
+  background: #050d1a;
+  /* navy-deepest — matches screenshot */
+  color: rgba(255, 255, 255, 0.60);
+  padding: 60px 0 0;
+  font-family: 'DM Sans', sans-serif;
 }
 
+
+/* ── Inner Container ────────────────────────────────────── */
 .inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-  max-width: 1100px;
+  max-width: 1180px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 40px;
 }
 
-.logo {
-  font-family: var(--font-serif);
-  color: #fff;
-  font-size: 1.1rem;
+
+/* ── 4-Column Grid ──────────────────────────────────────── */
+/* Col 1 is wider (brand info), cols 2–4 are equal nav columns */
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 52px;
+}
+
+
+/* ── Column 1 — Brand Block ─────────────────────────────── */
+
+/* "Stars Maid" wordmark */
+.brandName {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.65rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 6px;
+  letter-spacing: -0.3px;
+}
+
+/* ★ ★ ★ ★ ★ gold stars row */
+.stars {
+  color: #EBC053;
+  /* --gold */
+  font-size: 1rem;
+  letter-spacing: 4px;
+  margin-bottom: 18px;
+}
+
+/* Tagline paragraph */
+.brandDesk {
+  font-size: 0.88rem;
+  line-height: 1.80;
+  color: rgba(255, 255, 255, 0.55);
+  max-width: 320px;
+  margin-bottom: 24px;
+}
+
+/* Contact lines (phone + email) */
+.footerContact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footerContact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #EBC053;
+  /* gold — matches screenshot */
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footerContact a:hover {
+  color: #ffffff;
+}
+
+/* Small icon before phone / email */
+.footer-footerContact .icon-phone::before {
+  content: '📞';
+  font-size: 0.85rem;
+}
+
+.footer-footerContact .icon-email::before {
+  content: '✉️';
+  font-size: 0.85rem;
+}
+
+
+/* ── Columns 2–4 — Nav Columns ──────────────────────────── */
+.footerCol {}
+
+/* Column heading — "CLEANING", "HANDYMAN", "COMPANY" */
+.footerCol>h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #EBC053;
+  /* gold headings — matches screenshot */
+  margin-bottom: 20px;
+}
+
+/* Nav link list */
+.footerCol ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  /* comfortable vertical spacing */
+}
+
+/* Nav link items */
+.footerCol li a {
+  font-size: 0.90rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.62);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footerCol li a:hover {
+  color: #ffffff;
+}
+
+
+/* ── Divider Line ───────────────────────────────────────── */
+.footerBottomBar {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 22px 40px;
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* "© 2025 Stars Maid. All rights reserved." */
+.footerCopyright {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.38);
+}
+
+/* "Privacy Policy · Terms of Service" */
+.footerLegal {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.38);
 }
 
-.logoMark {
-  width: 30px;
-  height: 30px;
-  border-radius: 7px;
-  background: var(--accent);
-  display: grid;
-  place-items: center;
-  color: #fff;
+.footerLegal a {
+  color: rgba(255, 255, 255, 0.38);
+  text-decoration: none;
+  transition: color 0.2s;
 }
 
-.copy { font-size: .8rem; }
-
-.links {
-  display: flex;
-  gap: 20px;
+.footerLegal a:hover {
+  color: rgba(255, 255, 255, 0.75);
 }
 
-.links a {
-  font-size: .82rem;
-  color: rgba(255, 255, 255, .5);
-  transition: color var(--t);
+.footerLegal .sep {
+  color: rgba(255, 255, 255, 0.20);
 }
-.links a:hover { color: #fff; }
+
+
+/* ── Responsive — Tablet ────────────────────────────────── */
+@media (max-width: 860px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+
+  /* Brand block spans full width on tablet */
+  .footer-grid> :first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ── Responsive — Mobile ────────────────────────────────── */
+@media (max-width: 520px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 24px;
+  }
+}

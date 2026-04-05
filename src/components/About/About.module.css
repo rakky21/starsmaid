@@ -18,7 +18,7 @@
 .imgWrap {
   border-radius: var(--r-xl);
   height: 380px;
-  background: linear-gradient(135deg, #c2ede8, #8ecec8);
+  background: linear-gradient(135deg, #89CFF0, #8ecec8);
   display: flex;
   align-items: center;
   justify-content: center;

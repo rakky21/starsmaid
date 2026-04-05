@@ -31,7 +31,6 @@
   margin-bottom: 40px;
   overflow-x: auto;
   padding-bottom: 4px;
-  gap: 0;
 }
 
 .stepGroup {
@@ -63,8 +62,8 @@
   transition: background var(--t), color var(--t);
 }
 
-.stepDone .stepNum  { background: var(--accent); color: #fff; }
-.stepDone           { color: var(--ink-2); }
+.stepDone .stepNum   { background: var(--accent); color: #fff; }
+.stepDone            { color: var(--ink-2); }
 .stepActive .stepNum { background: var(--ink); color: #fff; }
 .stepActive          { color: var(--ink); }
 
@@ -177,40 +176,72 @@
 }
 
 .timeSlot {
-  padding: 9px 4px;
+  position: relative;
+  padding: 10px 6px;
   border-radius: var(--r-sm);
   border: 1.5px solid var(--border);
   text-align: center;
-  font-size: .78rem;
-  font-weight: 600;
-  cursor: pointer;
-  color: var(--ink-2);
   background: var(--surface);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
+  gap: 3px;
   transition: border-color var(--t), background var(--t), color var(--t);
 }
-.timeSlot:hover:not(:disabled) {
+
+/* Available — hover */
+.timeSlot:not(.timeBooked):not(.timeSelected) {
+  cursor: pointer;
+  color: var(--ink-2);
+}
+.timeSlot:not(.timeBooked):not(.timeSelected):hover {
   border-color: var(--accent);
   color: var(--accent);
   background: var(--accent-light);
 }
+
+/* Selected (available and clicked) */
 .timeSelected {
   background: var(--accent);
   border-color: var(--accent);
   color: #fff;
+  cursor: pointer;
 }
+
+/* ─── BOOKED SLOT — grey bg, red strikethrough text, no pointer ─── */
 .timeBooked {
-  background: var(--surface-3);
-  border-color: var(--border);
-  color: var(--ink-3);
-  text-decoration: line-through;
+  background: #f5f5f5;
+  border-color: #e0e0e0;
   cursor: not-allowed;
-  font-size: .72rem;
+  pointer-events: none;
+  opacity: 1;
 }
-.timeBooked small { font-size: .65rem; color: var(--danger); text-decoration: none; }
+
+/* The time text itself turns red with a line through it */
+.timeBooked .timeLabel {
+  color: var(--danger);
+  text-decoration: line-through;
+  text-decoration-color: var(--danger);
+  text-decoration-thickness: 2px;
+  font-weight: 700;
+}
+
+/* "Taken" badge below the time */
+.timeTakenBadge {
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--danger);
+  opacity: .8;
+}
+
+/* Normal time label (available slots) */
+.timeLabel {
+  font-size: .8rem;
+  font-weight: 600;
+  line-height: 1;
+}
 
 /* ── Service pills ── */
 .pillList {
@@ -276,6 +307,36 @@
   margin-bottom: 20px;
 }
 
+.sumRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.sumRowIcon {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: var(--accent-light);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.sumRowLabel {
+  font-size: .75rem;
+  color: var(--ink-3);
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.sumRowValue {
+  font-size: .875rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
 .sumDivider {
   height: 1px;
   background: var(--border);
@@ -300,11 +361,11 @@
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
-  .wrap { grid-template-columns: 1fr; }
+  .wrap    { grid-template-columns: 1fr; }
   .sidebar { position: static; }
 }
 
 @media (max-width: 600px) {
-  .wrap { padding: 32px 16px; }
+  .wrap     { padding: 32px 16px; }
   .timeGrid { grid-template-columns: repeat(2, 1fr); }
 }
