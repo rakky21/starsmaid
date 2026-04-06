@@ -23,14 +23,14 @@
 }
 
 .h1 {
-  font-family: var(--font-serif);
-  font-size: 2rem;
+  fontFamily: var(--font-serif);
+  fontSize: 2rem;
   color: var(--ink);
   margin-bottom: 10px;
 }
 
 .sub {
-  font-size: .95rem;
+  fontSize: .95rem;
   color: var(--ink-2);
   line-height: 1.7;
   margin-bottom: 36px;
@@ -65,13 +65,13 @@
 }
 
 .rowLabel {
-  font-size: .82rem;
+  fontSize: .82rem;
   color: var(--ink-3);
   font-weight: 500;
 }
 
 .rowValue {
-  font-size: .9rem;
+  fontSize: .9rem;
   font-weight: 700;
   color: var(--ink);
 }
@@ -79,9 +79,9 @@
 .code {
   background: var(--accent);
   color: #fff;
-  font-family: monospace;
+  fontFamily: monospace;
   letter-spacing: .12em;
-  font-size: 1rem;
+  fontSize: 1rem;
   padding: 3px 10px;
   border-radius: 4px;
 }

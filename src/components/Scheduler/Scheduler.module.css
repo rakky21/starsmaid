@@ -11,14 +11,14 @@
 .main {}
 
 .h1 {
-  font-family: var(--font-serif);
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  fontFamily: var(--font-serif);
+  fontSize: clamp(1.8rem, 3vw, 2.6rem);
   color: var(--ink);
   margin-bottom: 8px;
 }
 
 .sub {
-  font-size: .95rem;
+  fontSize: .95rem;
   color: var(--ink-2);
   margin-bottom: 36px;
   line-height: 1.6;
@@ -42,7 +42,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: .82rem;
+  fontSize: .82rem;
   font-weight: 600;
   color: var(--ink-3);
   white-space: nowrap;
@@ -56,7 +56,7 @@
   color: var(--ink-3);
   display: grid;
   place-items: center;
-  font-size: .75rem;
+  fontSize: .75rem;
   font-weight: 700;
   flex-shrink: 0;
   transition: background var(--t), color var(--t);
@@ -86,7 +86,7 @@
 
 .cardTitle {
   font-weight: 700;
-  font-size: .95rem;
+  fontSize: .95rem;
   color: var(--ink);
   margin-bottom: 20px;
   display: flex;
@@ -96,7 +96,7 @@
 .cardTitle svg { color: var(--accent); }
 
 .hint {
-  font-size: .85rem;
+  fontSize: .85rem;
   color: var(--ink-3);
   text-align: center;
   padding: 16px 0;
@@ -112,7 +112,7 @@
 
 .calMonth {
   font-weight: 700;
-  font-size: .95rem;
+  fontSize: .95rem;
   color: var(--ink);
 }
 
@@ -137,7 +137,7 @@
 
 .calDow {
   text-align: center;
-  font-size: .7rem;
+  fontSize: .7rem;
   font-weight: 700;
   letter-spacing: .04em;
   color: var(--ink-3);
@@ -149,7 +149,7 @@
   display: grid;
   place-items: center;
   border-radius: 6px;
-  font-size: .8rem;
+  fontSize: .8rem;
   font-weight: 500;
   cursor: pointer;
   color: var(--ink);
@@ -228,7 +228,7 @@
 
 /* "Taken" badge below the time */
 .timeTakenBadge {
-  font-size: .62rem;
+  fontSize: .62rem;
   font-weight: 700;
   letter-spacing: .04em;
   text-transform: uppercase;
@@ -238,7 +238,7 @@
 
 /* Normal time label (available slots) */
 .timeLabel {
-  font-size: .8rem;
+  fontSize: .8rem;
   font-weight: 600;
   line-height: 1;
 }
@@ -265,8 +265,8 @@
   background: var(--accent-light);
 }
 
-.pillName { font-size: .875rem; font-weight: 600; color: var(--ink); }
-.pillSub  { font-size: .75rem; color: var(--ink-3); margin-top: 2px; }
+.pillName { fontSize: .875rem; font-weight: 600; color: var(--ink); }
+.pillSub  { fontSize: .75rem; color: var(--ink-3); margin-top: 2px; }
 
 .pillCheck {
   width: 20px;
@@ -294,8 +294,8 @@
 }
 
 .sidebarTitle {
-  font-family: var(--font-serif);
-  font-size: 1.15rem;
+  fontFamily: var(--font-serif);
+  fontSize: 1.15rem;
   color: var(--ink);
   margin-bottom: 20px;
 }
@@ -325,14 +325,14 @@
 }
 
 .sumRowLabel {
-  font-size: .75rem;
+  fontSize: .75rem;
   color: var(--ink-3);
   font-weight: 500;
   margin-bottom: 2px;
 }
 
 .sumRowValue {
-  font-size: .875rem;
+  fontSize: .875rem;
   font-weight: 600;
   color: var(--ink);
 }
@@ -348,12 +348,12 @@
   border-radius: var(--r);
   padding: 18px;
   text-align: center;
-  font-size: .8rem;
+  fontSize: .8rem;
   color: var(--ink-3);
 }
 
 .sumNote {
-  font-size: .8rem;
+  fontSize: .8rem;
   color: var(--ink-2);
   line-height: 1.6;
   margin-bottom: 16px;

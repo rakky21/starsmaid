@@ -22,20 +22,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 6rem;
+  font-font: 6rem;
   box-shadow: var(--sh-lg);
 }
 
 .h2 {
-  font-family: var(--font-serif);
-  font-size: clamp(1.7rem, 2.8vw, 2.5rem);
+  fontFamily: var(--font-serif);
+  font-font: clamp(1.7rem, 2.8vw, 2.5rem);
   color: var(--ink);
   margin-bottom: 16px;
   line-height: 1.2;
 }
 
 .p {
-  font-size: .95rem;
+  font-font: .95rem;
   color: var(--ink-2);
   line-height: 1.75;
   margin-bottom: 14px;
@@ -51,14 +51,14 @@
 }
 
 .statVal {
-  font-family: var(--font-serif);
-  font-size: 2rem;
+  fontFamily: var(--font-serif);
+  font-font: 2rem;
   color: var(--accent);
   line-height: 1;
 }
 
 .statLbl {
-  font-size: .78rem;
+  font-font: .78rem;
   color: var(--ink-3);
   margin-top: 4px;
   font-weight: 500;

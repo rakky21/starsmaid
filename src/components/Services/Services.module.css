@@ -33,7 +33,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
+  fontSize: 3rem;
 }
 
 .cardBody { padding: 22px 22px 24px; }
@@ -41,14 +41,14 @@
 .cardMeta { margin-bottom: 10px; }
 
 .cardName {
-  font-family: var(--font-serif);
-  font-size: 1.1rem;
+  fontFamily: var(--font-serif);
+  fontSize: 1.1rem;
   color: var(--ink);
   margin-bottom: 8px;
 }
 
 .cardDesc {
-  font-size: .875rem;
+  fontSize: .875rem;
   color: var(--ink-2);
   line-height: 1.65;
   margin-bottom: 18px;
@@ -61,7 +61,7 @@
 }
 
 .cardPrice {
-  font-size: .9rem;
+  fontSize: .9rem;
   font-weight: 700;
   color: var(--accent);
 }

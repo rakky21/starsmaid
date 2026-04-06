@@ -43,12 +43,12 @@
 
 .title {
   font-weight: 700;
-  font-size: .875rem;
+  fontSize: .875rem;
   margin-bottom: 3px;
 }
 
 .body {
-  font-size: .78rem;
+  fontSize: .78rem;
   color: rgba(255, 255, 255, .7);
   line-height: 1.5;
 }

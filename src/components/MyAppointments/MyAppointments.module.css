@@ -28,14 +28,14 @@
 }
 
 .h1 {
-  font-family: var(--font-serif);
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  fontFamily: var(--font-serif);
+  fontSize: clamp(1.8rem, 3vw, 2.6rem);
   color: var(--ink);
   margin-bottom: 6px;
 }
 
 .sub {
-  font-size: .95rem;
+  fontSize: .95rem;
   color: var(--ink-2);
   line-height: 1.6;
 }
@@ -46,8 +46,8 @@
 }
 
 .sectionTitle {
-  font-family: var(--font-serif);
-  font-size: 1.2rem;
+  fontFamily: var(--font-serif);
+  fontSize: 1.2rem;
   color: var(--ink);
   margin-bottom: 20px;
   display: flex;
@@ -64,9 +64,9 @@
   border-radius: 50%;
   background: var(--accent-light);
   color: var(--accent-dark);
-  font-size: .75rem;
+  fontSize: .75rem;
   font-weight: 700;
-  font-family: var(--font-sans);
+  fontFamily: var(--font-sans);
 }
 
 /* ── Grid ── */
@@ -104,8 +104,8 @@
 }
 
 .cardService {
-  font-family: var(--font-serif);
-  font-size: 1.05rem;
+  fontFamily: var(--font-serif);
+  fontSize: 1.05rem;
   color: var(--ink);
   line-height: 1.3;
 }
@@ -125,7 +125,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: .875rem;
+  fontSize: .875rem;
   color: var(--ink-2);
 }
 
@@ -141,8 +141,8 @@
 }
 
 .confCode {
-  font-family: monospace;
-  font-size: .8rem;
+  fontFamily: monospace;
+  fontSize: .8rem;
   font-weight: 700;
   letter-spacing: .08em;
   color: var(--accent-dark);
@@ -179,13 +179,13 @@
 }
 
 .stateTitle {
-  font-family: var(--font-serif);
-  font-size: 1.4rem;
+  fontFamily: var(--font-serif);
+  fontSize: 1.4rem;
   color: var(--ink);
 }
 
 .stateText {
-  font-size: .9rem;
+  fontSize: .9rem;
   color: var(--ink-3);
   max-width: 320px;
   line-height: 1.6;
