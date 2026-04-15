@@ -63,7 +63,7 @@
   color: #fff;
   display: grid;
   place-items: center;
-  fontSize: .75rem;
+  font-size: .75rem;
   font-weight: 700;
   flex-shrink: 0;
 }

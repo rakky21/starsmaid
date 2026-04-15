@@ -1,0 +1,91 @@
+/* ===== GLOBAL STYLES ===== */
+body {
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background-color: #f9fbfd;
+  color: #1a1a1a;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* ===== CONTAINER ===== */
+.terms-container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== HEADINGS ===== */
+.terms-container h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #0f172a;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 10px;
+}
+
+.terms-container h2 {
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #1e293b;
+}
+
+/* ===== TEXT ===== */
+.terms-container p {
+  margin-bottom: 12px;
+  color: #374151;
+}
+
+/* ===== LISTS ===== */
+.terms-container ul {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.terms-container li {
+  margin-bottom: 8px;
+}
+
+/* ===== SECTION DIVIDERS ===== */
+.terms-container hr {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 25px 0;
+}
+
+/* ===== HIGHLIGHT BOX (for important clauses) ===== */
+.highlight {
+  background: #f1f5f9;
+  border-left: 4px solid #3b82f6;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+/* ===== FOOTER NOTE ===== */
+.footer-note {
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 40px;
+  text-align: center;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .terms-container {
+    margin: 20px;
+    padding: 25px;
+  }
+
+  .terms-container h1 {
+    font-size: 26px;
+  }
+
+  .terms-container h2 {
+    font-size: 18px;
+  }
+}

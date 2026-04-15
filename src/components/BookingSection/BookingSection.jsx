@@ -2,7 +2,7 @@ import styles from './BookingSection.module.css';
 
 export default function BookingSection() {
   return (
-    <section className={styles.bookingSection} id="book">
+    <section className={styles.bookingSection} id="section-book">
       <div className={styles.container}>
         <div className={styles.sectionLabel}>Book Now</div>
         <div className={styles.sectionTitle}>Ready for a 5-Star Home?</div>

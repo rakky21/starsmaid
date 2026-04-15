@@ -2,7 +2,7 @@ import styles from "./WhyUs.module.css";
 
 export default function WhyUs() {
   return (
-    <section className={styles.whySection} id="why-us">
+    <section className={styles.whySection} id="section-why-us">
       <div className={styles.whyInner}>
         <div className={styles.whyVisual}>
           <div className={styles.whyCard}>

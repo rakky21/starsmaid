@@ -2,7 +2,7 @@ import styles from './HowItWorks.module.css';
 
 export default function HowItWorks() {
 	return (
-		<section className="steps-section">
+		<section className="steps-section" id='section-how'>
 			<div className={styles.container}>
 				<div className= {styles.sectionLabel}>How It Works</div>
 				<div className={styles.sectionTitle}>Book Your Service in 3 Simple Steps</div>

@@ -2,7 +2,7 @@ import styles from './ServiceArea.module.css';
 
 export default function ServiceArea() {
 	return (
-		<section className={styles.areasSection} id="areas">
+		<section className={styles.areasSection} id="section-areas">
 			<div className={styles.areasContainer}>
 				<div className={styles.areasLabel}>Where We Serve</div>
 				<div className={styles.areasTitle}>Serving the DMV Area</div>

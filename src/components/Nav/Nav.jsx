@@ -27,7 +27,7 @@ export default function Nav() {
     <nav className={styles.nav}>
       <div className={styles.inner}>
         {/* Logo */}
-        <Link to="/" className={styles.logo}>
+        <Link to="/" className={styles.logo} >
           <div className={styles.logoMark}>
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -40,10 +40,13 @@ export default function Nav() {
 
         {/* Centre links */}
         <div className={styles.links}>
-          <button className="btn btn-ghost btn-sm" onClick={() => navigate('/')}>Home</button>
+          <button className="btn btn-ghost btn-sm" onClick={() => scrollTo('section-about')}>About</button>
+          <button className="btn btn-ghost btn-sm" onClick={() => scrollTo('section-how')}>How To</button>
           <button className="btn btn-ghost btn-sm" onClick={() => scrollTo('section-why-us')}>Why Us</button>
           <button className="btn btn-ghost btn-sm" onClick={() => scrollTo('section-services')}>Services</button>
-          <button className="btn btn-ghost btn-sm" onClick={() => scrollTo('section-about')}>About</button>
+          <button className="btn btn-ghost btn-sm" onClick={() => scrollTo('section-book')}>Book</button>
+          <button className="btn btn-ghost btn-sm" onClick={() => scrollTo('section-areas')}>Locations</button>
+          <button className="btn btn-ghost btn-sm" onClick={() => navigate('/terms')}>Terms & Policies</button>
         </div>
 
         {/* Right actions */}
@@ -80,7 +83,6 @@ export default function Nav() {
           ) : (
             <>
               <Link to="/login" className="btn btn-outline btn-sm">Log In</Link>
-              <Link to="/login" className="btn btn-primary btn-sm">Sign Up</Link>
             </>
           )}
         </div>
