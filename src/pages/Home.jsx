@@ -3,8 +3,8 @@ import Services from '../components/Services/Services.jsx';
 import About from '../components/About/About.jsx';
 import Footer from '../components/Footer/Footer.jsx';
 import HowItWorks from '../components/HowItWorks/HowItworks.jsx';
-import BookingSection from '../components/BookingSection/BookingSection.jsx';
-import ServiceArea from '../components/ServiceArea/ServiceArea.jsx';
+// import BookingSection from '../components/BookingSection/BookingSection.jsx';
+// import ServiceArea from '../components/ServiceArea/ServiceArea.jsx';
 import WhyUs from '../components/WhyUs/WhyUs.jsx';
 
 export default function Home() {
@@ -15,8 +15,9 @@ export default function Home() {
       <HowItWorks />
       <WhyUs />
       <Services />
-      <BookingSection />
-      <ServiceArea />
+      {/* add later */}
+      {/* <BookingSection />
+      <ServiceArea /> */}
       <Footer />
     </main>
   );

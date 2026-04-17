@@ -7,6 +7,7 @@ import MyAppointments from './pages/Dashboard/MyAppointments.jsx';
 import NoMatch from './pages/NoMatch.jsx';
 import Auth from './utils/auth.js';
 import TermsPolicies from './pages/TermsPolicies.jsx';
+import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
 
 function PrivateRoute({ children }) {
   return Auth.loggedIn() ? children : <Navigate to="/login" replace />;
@@ -20,6 +21,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Lobby />} />
         <Route path="/terms" element={<TermsPolicies />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route
           path="/book"
           element={

@@ -1,6 +1,8 @@
+import { useNavigate } from 'react-router-dom';
 import styles from './Footer.module.css';
 
 export default function Footer() {
+  const navigate = useNavigate();
   return (
     <footer id="contact" className={styles.footer}>
       <div className={styles.inner}>
@@ -65,9 +67,9 @@ export default function Footer() {
       <div className={styles.footerBottomBar}>
         <span className={styles.footerCopyright}>© 2025 Stars Maid. All rights reserved.</span>
         <div className={styles.footerLegal}>
-          <a href="#">Privacy Policy</a>
+          <a href="#" onClick={()=> navigate('/privacy')}>Privacy Policy</a>
           <span className="sep">·</span>
-          <a href="#">Terms of Service</a>
+          <a href="#" onClick={()=> navigate('/terms')}>Terms of Service</a>
         </div>
       </div>
     </footer>

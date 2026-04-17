@@ -44,9 +44,8 @@ export default function Nav() {
           <button className="btn btn-ghost btn-sm" onClick={() => scrollTo('section-how')}>How To</button>
           <button className="btn btn-ghost btn-sm" onClick={() => scrollTo('section-why-us')}>Why Us</button>
           <button className="btn btn-ghost btn-sm" onClick={() => scrollTo('section-services')}>Services</button>
-          <button className="btn btn-ghost btn-sm" onClick={() => scrollTo('section-book')}>Book</button>
-          <button className="btn btn-ghost btn-sm" onClick={() => scrollTo('section-areas')}>Locations</button>
-          <button className="btn btn-ghost btn-sm" onClick={() => navigate('/terms')}>Terms & Policies</button>
+          {/* <button className="btn btn-ghost btn-sm" onClick={() => scrollTo('section-book')}>Book</button> */}
+          {/* <button className="btn btn-ghost btn-sm" onClick={() => scrollTo('section-areas')}>Locations</button> */}
         </div>
 
         {/* Right actions */}
