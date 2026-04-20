@@ -4,7 +4,7 @@ import { CREATE_USER } from '../../utils/graphql.js';
 import Auth from '../../utils/auth.js';
 import styles from './Auth.module.css';
 
-function Field({ id, label, name, type = 'text', placeholder, value, onChange, error}) {
+function Field({ id, label, name, type = 'text', placeholder, value, onChange, error }) {
   return (
     <div className={styles.field}>
       <label htmlFor={id}>{label}</label>
@@ -80,12 +80,12 @@ export default function SignUp({ onSwitch }) {
       <form onSubmit={handleSubmit} noValidate>
         <div className={styles.row}>
           <Field id="su-name" label="First name" name="name" placeholder="Jane" onChange={handleChange} />
-          <Field id="su-last" label="Last name" name="lastName" placeholder="Smith" onChange={handleChange}/>
+          <Field id="su-last" label="Last name" name="lastName" placeholder="Smith" onChange={handleChange} />
         </div>
-        <Field id="su-email" label="Email address" name="email" type="email" placeholder="you@example.com" onChange={handleChange}/>
-        <Field id="su-phone" label="Phone (optional)" name="phone" type="tel" placeholder="(202) 555-0100" onChange={handleChange}/>
-        <Field id="su-password" label="Password" name="password" type="password" placeholder="Min. 8 characters" onChange={handleChange}/>
-        <Field id="su-confirm" label="Confirm password" name="confirm" type="password" placeholder="Repeat password" onChange={handleChange}/>
+        <Field id="su-email" label="Email address" name="email" type="email" placeholder="you@example.com" onChange={handleChange} />
+        <Field id="su-phone" label="Phone (optional)" name="phone" type="tel" placeholder="(202) 555-0100" onChange={handleChange} />
+        <Field id="su-password" label="Password" name="password" type="password" placeholder="Min. 8 characters" onChange={handleChange} />
+        <Field id="su-confirm" label="Confirm password" name="confirm" type="password" placeholder="Repeat password" onChange={handleChange} />
 
         {errors.server && (
           <div className="form-err">

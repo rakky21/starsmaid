@@ -17,10 +17,10 @@ export default function Confirmation({ appointment, onReset }) {
   }, [appointment]);
 
   const rows = [
-    { label: 'Service',        value: appointment.service      },
-    { label: 'Date',           value: appointment.date         },
-    { label: 'Time',           value: appointment.time         },
-    { label: 'Status',         value: appointment.status,  tag: true },
+    { label: 'Service', value: appointment.service },
+    { label: 'Date', value: appointment.date },
+    { label: 'Time', value: appointment.time },
+    { label: 'Status', value: appointment.status, tag: true },
     { label: 'Confirmation #', value: appointment.confirmation, code: true },
   ];
 
@@ -37,7 +37,7 @@ export default function Confirmation({ appointment, onReset }) {
         <div className={styles.iconWrap}>
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <polyline points="20 6 9 17 4 12"/>
+            <polyline points="20 6 9 17 4 12" />
           </svg>
         </div>
 

@@ -5,14 +5,14 @@ import Auth from '../../utils/auth.js';
 import styles from './Auth.module.css';
 
 export default function Login({ onSwitch }) {
-  const [form, setForm]   = useState({ email: '', password: '' });
+  const [form, setForm] = useState({ email: '', password: '' });
   const [errors, setErrors] = useState({});
 
   const [login, { loading }] = useMutation(LOGIN);
 
   const validate = () => {
     const e = {};
-    if (!form.email)    e.email    = 'Email is required';
+    if (!form.email) e.email = 'Email is required';
     if (!form.password) e.password = 'Password is required';
     return e;
   };
@@ -78,9 +78,9 @@ export default function Login({ onSwitch }) {
         {errors.server && (
           <div className="form-err">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="12" y1="8" x2="12" y2="12" stroke="#fff" strokeWidth="2" strokeLinecap="round"/>
-              <circle cx="12" cy="16" r="1" fill="#fff"/>
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="8" x2="12" y2="12" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
+              <circle cx="12" cy="16" r="1" fill="#fff" />
             </svg>
             {errors.server}
           </div>

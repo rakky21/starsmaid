@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Navigate } from 'react-router-dom';
-import Login  from '../components/Auth/Login.jsx';
+import Login from '../components/Auth/Login.jsx';
 import SignUp from '../components/Auth/SignUp.jsx';
-import Auth   from '../utils/auth.js';
+import Auth from '../utils/auth.js';
 import styles from './Lobby.module.css';
 
 export default function Lobby() {
@@ -20,8 +20,8 @@ export default function Lobby() {
           <div className={styles.sideLogoMark}>
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
-              <polyline points="9,22 9,12 15,12 15,22"/>
+              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              <polyline points="9,22 9,12 15,12 15,22" />
             </svg>
           </div>
           <span className={styles.sideLogoText}>StarsMaid</span>
@@ -42,7 +42,7 @@ export default function Lobby() {
               <span className={styles.featIcon}>
                 <svg width="11" height="11" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                  <polyline points="20 6 9 17 4 12"/>
+                  <polyline points="20 6 9 17 4 12" />
                 </svg>
               </span>
               {f}
@@ -57,7 +57,7 @@ export default function Lobby() {
           {/* Tabs */}
           <div className={styles.tabs}>
             <button
-              className={`${styles.tab} ${tab === 'login'  ? styles.tabActive : ''}`}
+              className={`${styles.tab} ${tab === 'login' ? styles.tabActive : ''}`}
               onClick={() => setTab('login')}
             >Log In</button>
             <button
@@ -67,8 +67,8 @@ export default function Lobby() {
           </div>
 
           {tab === 'login'
-            ? <Login  onSwitch={() => setTab('signup')} />
-            : <SignUp onSwitch={() => setTab('login')}  />
+            ? <Login onSwitch={() => setTab('signup')} />
+            : <SignUp onSwitch={() => setTab('login')} />
           }
         </div>
       </div>
