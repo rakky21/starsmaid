@@ -1,24 +1,20 @@
 import { jwtDecode } from 'jwt-decode';
 
-const Auth = {
+class Auth {
   // Save token to localStorage
-  login(token) {
+ login(token) {
     localStorage.setItem('id_token', token);
-    window.location.assign('/');
-  },
-
+    window.location.assign('/starsmaid/appointments'); // or wherever
+  }
   // Remove token and reload
   logout() {
     localStorage.removeItem('id_token');
     window.location.assign('/');
-  },
-
+  }
   // Check if user is logged in and token is not expired
   loggedIn() {
-    const token = this.getToken();
-    return !!token && !this.isTokenExpired(token);
-  },
-
+    return !!this.getToken();
+  }
   // Check if token is expired
   isTokenExpired(token) {
     try {
@@ -27,12 +23,11 @@ const Auth = {
     } catch {
       return true;
     }
-  },
-
+  }
   // Get raw token
   getToken() {
     return localStorage.getItem('id_token');
-  },
+  }
 
   // Get decoded profile
   getProfile() {
@@ -41,13 +36,13 @@ const Auth = {
     } catch {
       return null;
     }
-  },
+  }
 
   // Get user id from token
   getUserId() {
     const profile = this.getProfile();
     return profile?.data?.id || null;
-  },
+  }
 
   // Get user name initials
   getInitials() {
@@ -55,7 +50,7 @@ const Auth = {
     if (!profile?.data) return '??';
     const { name, lastName } = profile.data;
     return `${name?.[0] || ''}${lastName?.[0] || ''}`.toUpperCase();
-  },
+  }
 };
 
-export default Auth;
+export default new Auth();

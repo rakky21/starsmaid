@@ -1,5 +1,5 @@
 import { useQuery, useMutation, from } from '@apollo/client';
-import { GET_MY_APPOINTMENTS, CANCEL_APPOINTMENT } from '../../utils/graphql';
+import { GET_APPOINTMENT, CANCEL_APPOINTMENT } from '../../utils/graphql';
 import { useNavigate } from 'react-router-dom';
 import styles from './MyAppointments.module.css';
 
@@ -45,12 +45,12 @@ function WrenchIcon() {
 export default function MyAppointments() {
   const navigate = useNavigate();
 
-  const { data, loading, error } = useQuery(GET_MY_APPOINTMENTS, {
+  const { data, loading, error } = useQuery(GET_APPOINTMENT, {
     fetchPolicy: 'network-only', // always pull fresh from server on mount
   });
 
   const [cancelAppointment, { loading: cancelling }] = useMutation(CANCEL_APPOINTMENT, {
-    refetchQueries: [{ query: GET_MY_APPOINTMENTS }],
+    refetchQueries: [{ query: GET_APPOINTMENT }],
     awaitRefetchQueries: true,
   });
 
@@ -136,10 +136,10 @@ export default function MyAppointments() {
             <span className={styles.count}>{active.length}</span>
           </h2>
           <div className={styles.grid}>
-            {active.map(appt => (
+            {active.map(appointment => (
               <AppointmentCard
-                key={appt.id}
-                appt={appt}
+                key={appointment.id}
+                appointment={appointment}
                 onCancel={handleCancel}
                 cancelling={cancelling}
               />
@@ -156,10 +156,10 @@ export default function MyAppointments() {
             <span className={styles.count}>{past.length}</span>
           </h2>
           <div className={styles.grid}>
-            {past.map(appt => (
+            {past.map(appointment => (
               <AppointmentCard
-                key={appt.id}
-                appt={appt}
+                key={appointment.id}
+                appointment={appointment}
                 onCancel={null}   // no cancel button for past
                 cancelling={false}
               />
@@ -172,17 +172,17 @@ export default function MyAppointments() {
 }
 
 /* ── Individual appointment card ─────────────────────────────────── */
-function AppointmentCard({ appt, onCancel, cancelling }) {
-  const tagClass = STATUS_TAG[appt.status] || 'tag-accent';
-  const isCancelled = appt.status === 'cancelled';
+function AppointmentCard({ appointment, onCancel, cancelling }) {
+  const tagClass = STATUS_TAG[appointment.status] || 'tag-accent';
+  const isCancelled = appointment.status === 'cancelled';
 
   return (
     <div className={`${styles.card} ${isCancelled ? styles.cardCancelled : ''}`}>
       {/* Top row: service + status */}
       <div className={styles.cardTop}>
-        <h3 className={styles.cardService}>{appt.service}</h3>
+        <h3 className={styles.cardService}>{appointment.service}</h3>
         <span className={`tag ${tagClass}`} style={{ textTransform: 'capitalize' }}>
-          {appt.status}
+          {appointment.status}
         </span>
       </div>
 
@@ -190,15 +190,15 @@ function AppointmentCard({ appt, onCancel, cancelling }) {
       <div className={styles.cardDetails}>
         <div className={styles.detail}>
           <span className={styles.detailIcon}><CalIcon /></span>
-          <span>{appt.date}</span>
+          <span>{appointment.date}</span>
         </div>
         <div className={styles.detail}>
           <span className={styles.detailIcon}><ClockIcon /></span>
-          <span>{appt.time}</span>
+          <span>{appointment.time}</span>
         </div>
         <div className={styles.detail}>
           <span className={styles.detailIcon}><WrenchIcon /></span>
-          <span className={styles.confCode}>{appt.confirmation}</span>
+          <span className={styles.confCode}>{appointment.confirmation}</span>
         </div>
       </div>
 
@@ -207,7 +207,7 @@ function AppointmentCard({ appt, onCancel, cancelling }) {
         <div className={styles.cardActions}>
           <button
             className="btn btn-danger btn-sm"
-            onClick={() => onCancel(appt.id)}
+            onClick={() => onCancel(appointment.id)}
             disabled={cancelling}
           >
             {cancelling ? 'Cancelling…' : 'Cancel Appointment'}

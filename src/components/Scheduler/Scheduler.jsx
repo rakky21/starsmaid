@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { useMutation, useQuery } from '@apollo/client';
-import { CREATE_APPOINTMENT, GET_BOOKED_TIMES, GET_MY_APPOINTMENTS } from '../../utils/graphql.js';
+import { CREATE_APPOINTMENT, GET_BOOKED_TIMES, GET_APPOINTMENT } from '../../utils/graphql.js';
 import styles from './Scheduler.module.css';
 
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June',
@@ -77,7 +77,7 @@ export default function Scheduler({ onConfirmed }) {
   // After booking: refetch both the appointments list AND booked times
   const [createAppointment, { loading }] = useMutation(CREATE_APPOINTMENT, {
     refetchQueries: [
-      { query: GET_MY_APPOINTMENTS },
+      { query: GET_APPOINTMENT},
       ...(selDate
         ? [{ query: GET_BOOKED_TIMES, variables: { date: formattedDate } }]
         : []
