@@ -74,11 +74,19 @@
 }
 
 @media (max-width: 780px) {
-  .links { display: none; }
+  .links {
+    display: none;
+  }
 }
 
 @media (max-width: 600px) {
-  .inner   { padding: 0 16px; gap: 8px; }
+  .inner {
+    padding: 0 16px;
+    gap: 8px;
+  }
+
   /* Hide "My Appointments" text on very small screens, keep icon */
-  .actions .btn-ghost svg { display: block; }
+  .actions .btn-ghost svg {
+    display: block;
+  }
 }

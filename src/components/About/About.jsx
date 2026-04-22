@@ -1,9 +1,9 @@
 import styles from './About.module.css';
 
 const STATS = [
-  { val: '500+', lbl: 'Happy Clients'    },
-  { val: '8+',   lbl: 'Years Serving DMV' },
-  { val: '4.9★', lbl: 'Average Rating'   },
+  { val: '500+', lbl: 'Happy Clients' },
+  { val: '8+', lbl: 'Years Serving DMV' },
+  { val: '4.9★', lbl: 'Average Rating' },
 ];
 
 export default function About() {

@@ -23,7 +23,7 @@
   width: 520px;
   height: 520px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(26,158,143,.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(26, 158, 143, .12) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -41,7 +41,9 @@
 }
 
 /* ── Copy ── */
-.eyebrow { margin-bottom: 20px; }
+.eyebrow {
+  margin-bottom: 20px;
+}
 
 .h1 {
   fontFamily: var(--font-serif);
@@ -51,7 +53,10 @@
   margin-bottom: 20px;
 }
 
-.em { color: var(--accent); font-style: italic; }
+.em {
+  color: var(--accent);
+  font-style: italic;
+}
 
 .sub {
   fontSize: 1.05rem;
@@ -94,14 +99,20 @@
   color: #fff;
   margin-left: -8px;
 }
-.avatars span:first-child { margin-left: 0; }
+
+.avatars span:first-child {
+  margin-left: 0;
+}
 
 .trustText {
   fontSize: .82rem;
   color: var(--ink-2);
   line-height: 1.4;
 }
-.trustText strong { color: var(--ink); }
+
+.trustText strong {
+  color: var(--ink);
+}
 
 /* ── Card ── */
 .card {
@@ -142,7 +153,9 @@
   cursor: pointer;
   transition: border-color var(--t) var(--ease), background var(--t) var(--ease);
 }
-.svcItem:hover, .svcSel {
+
+.svcItem:hover,
+.svcSel {
   border-color: var(--accent);
   background: var(--accent-light);
 }
@@ -158,20 +171,43 @@
   color: var(--ink-2);
   transition: background var(--t), color var(--t);
 }
+
 .svcIconSel {
   background: var(--accent);
   color: #fff;
 }
 
-.svcName { font-weight: 600; fontSize: .9rem; color: var(--ink); }
-.svcPrice { fontSize: .78rem; color: var(--ink-3); margin-top: 2px; }
+.svcName {
+  font-weight: 600;
+  fontSize: .9rem;
+  color: var(--ink);
+}
+
+.svcPrice {
+  fontSize: .78rem;
+  color: var(--ink-3);
+  margin-top: 2px;
+}
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
-  .inner { grid-template-columns: 1fr; gap: 40px; }
-  .card  { max-width: 480px; margin: 0 auto; }
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .card {
+    max-width: 480px;
+    margin: 0 auto;
+  }
 }
+
 @media (max-width: 600px) {
-  .hero { padding: 60px 0 72px; }
-  .card { display: none; }
+  .hero {
+    padding: 60px 0 72px;
+  }
+
+  .card {
+    display: none;
+  }
 }

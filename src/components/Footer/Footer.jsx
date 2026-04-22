@@ -67,9 +67,9 @@ export default function Footer() {
       <div className={styles.footerBottomBar}>
         <span className={styles.footerCopyright}>© 2025 Stars Maid. All rights reserved.</span>
         <div className={styles.footerLegal}>
-          <a href="#" onClick={()=> navigate('/privacy')}>Privacy Policy</a>
+          <a href="#" onClick={() => navigate('/privacy')}>Privacy Policy</a>
           <span className="sep">·</span>
-          <a href="#" onClick={()=> navigate('/terms')}>Terms of Service</a>
+          <a href="#" onClick={() => navigate('/terms')}>Terms of Service</a>
         </div>
       </div>
     </footer>

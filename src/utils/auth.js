@@ -2,7 +2,7 @@ import { jwtDecode } from 'jwt-decode';
 
 class Auth {
   // Save token to localStorage
- login(token) {
+  login(token) {
     localStorage.setItem('id_token', token);
     window.location.assign('/starsmaid/appointments'); // or wherever
   }

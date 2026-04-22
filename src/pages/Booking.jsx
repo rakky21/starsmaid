@@ -1,9 +1,9 @@
-import Scheduler    from '../components/Scheduler/Scheduler.jsx';
+import Scheduler from '../components/Scheduler/Scheduler.jsx';
 import Confirmation from '../components/Confirmation/Confirmation.jsx';
 import { useState } from 'react';
 
 export default function Booking() {
-  const [confirmed, setConfirmed]     = useState(false);
+  const [confirmed, setConfirmed] = useState(false);
   const [appointment, setAppointment] = useState(null);
 
   const handleConfirmed = (appt) => {

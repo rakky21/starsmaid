@@ -6,8 +6,8 @@ import { useQuery } from '@apollo/client';
 import { GET_APPOINTMENT } from '../../utils/graphql';
 
 export default function Confirmation({ onReset }) {
-  const navigate    = useNavigate();
-  const location    = useLocation();
+  const navigate = useNavigate();
+  const location = useLocation();
   const { id: appointmentId } = useParams();
 
   // PRIMARY: appointment object passed via navigate state from Booking page.
@@ -36,10 +36,10 @@ export default function Confirmation({ onReset }) {
   }, [appointment]);
 
   const rows = useMemo(() => [
-    { label: 'Service',        value: appointment.service },
-    { label: 'Date',           value: appointment.date },
-    { label: 'Time',           value: appointment.time },
-    { label: 'Status',         value: appointment.status,       tag: true },
+    { label: 'Service', value: appointment.service },
+    { label: 'Date', value: appointment.date },
+    { label: 'Time', value: appointment.time },
+    { label: 'Status', value: appointment.status, tag: true },
     { label: 'Confirmation #', value: appointment.confirmation, code: true },
   ], [appointment]);
 

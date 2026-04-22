@@ -1,4 +1,6 @@
-.formWrap { width: 100%; }
+.formWrap {
+  width: 100%;
+}
 
 .title {
   fontFamily: var(--font-serif);
@@ -22,7 +24,10 @@
   font: inherit;
   padding: 0;
 }
-.switch:hover { text-decoration: underline; }
+
+.switch:hover {
+  text-decoration: underline;
+}
 
 /* ── Fields ── */
 .field {
@@ -46,7 +51,9 @@
   width: 100%;
 }
 
-.inputErr { border-color: var(--danger) !important; }
+.inputErr {
+  border-color: var(--danger) !important;
+}
 
 .errMsg {
   fontSize: .75rem;
@@ -60,5 +67,7 @@
 }
 
 @media (max-width: 480px) {
-  .row { grid-template-columns: 1fr; }
+  .row {
+    grid-template-columns: 1fr;
+  }
 }

@@ -77,7 +77,7 @@ export default function Scheduler({ onConfirmed }) {
   // After booking: refetch both the appointments list AND booked times
   const [createAppointment, { loading }] = useMutation(CREATE_APPOINTMENT, {
     refetchQueries: [
-      { query: GET_APPOINTMENT},
+      { query: GET_APPOINTMENT },
       ...(selDate
         ? [{ query: GET_BOOKED_TIMES, variables: { date: formattedDate } }]
         : []
