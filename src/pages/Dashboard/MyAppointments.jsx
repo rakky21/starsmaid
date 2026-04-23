@@ -1,29 +1,87 @@
-const APPOINTMENTS = [
-  { id:1, date:'2026-04-15', time:'2:00 PM', service:'Deep Cleaning', status:'Scheduled', technician:'Carlos R.' },
-  { id:2, date:'2026-04-22', time:'11:00 AM', service:'Standard Cleaning', status:'Confirmed', technician:'Mara H.' },
-];
+import { useQuery, useMutation, gql, createHttpLink } from "@apollo/client";
+import { useEffect, useMemo } from 'react';
+import { GET_APPOINTMENT } from '../../utils/graphql';
+
+const GET_APPOINTMENTS = gql`
+  query {
+    myAppointments {
+      id
+      date
+      time
+      service
+      status
+      confirmation
+      technician
+    }
+  }
+`;
+const CANCEL_APPOINTMENT = gql`
+  mutation cancelAppointment($id: ID!) {
+    cancelAppointment(id: $id) {
+      id
+      status
+    }
+  }
+`;
+
+console.log("TOKEN:", localStorage.getItem("id_token"));
 
 export default function MyAppointments() {
+  const { loading, error, data, refetch } = useQuery(GET_APPOINTMENTS);
+  const [cancelAppointment] = useMutation(CANCEL_APPOINTMENT);
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+  const now = new Date();
+  const parseDateTime = (date, time) => {
+    const [timePart, modifier] = time.split(" ");
+    let [hours, minutes] = timePart.split(":");
+    if (modifier === "PM" && hours !== "12") hours = String(+hours + 12);
+    if (modifier === "AM" && hours === "12") hours = "00";
+    return new Date(`${date}T${hours}:${minutes}:00`);
+  };
+  const isPast = (a) => parseDateTime(a.date, a.time) < now;
+  const handleCancel = async (id) => {
+    try {
+
+      await cancelAppointment({ variables: { id } });
+      await refetch();
+    } catch (err) {
+      alert(err.message || "Failed to cancel. Please try again.");
+    }
+  };
+  const sortedAppointments = data?.myAppointments
+    ? [...data.myAppointments].sort((a, b) => {
+      const aPast = isPast(a);
+      const bPast = isPast(b);
+
+      if (aPast && !bPast) return 1;
+      if (!aPast && bPast) return -1;
+
+      if (!aPast && !bPast) {
+        return parseDateTime(a.date, a.time) - parseDateTime(b.date, b.time);
+      }
+
+      return parseDateTime(b.date, b.time) - parseDateTime(a.date, a.time);
+    })
+    : [];
   return (
-    <main style={{ padding:'72px 0', background:'#F8FAFC' }}>
+    <main style={{ padding: "72px 0", background: "#F8FAFC" }}>
       <div className="container">
-        <p className="section-label">My Appointments</p>
-        <h1 className="section-h2">Upcoming Services</h1>
-        <div style={{ display:'grid', gap:'14px', marginTop:'24px' }}>
-          {APPOINTMENTS.map((a) => (
-            <article key={a.id} style={{ background:'#fff', border:'1px solid #d8e4f4', borderRadius:'10px', padding:'16px' }}>
-              <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center' }}>
-                <h3 style={{ margin:0 }}>{a.service}</h3>
-                <span style={{ color: a.status === 'Scheduled' ? '#0ea5e9' : '#10b981', fontWeight:'700' }}>{a.status}</span>
-              </div>
-              <p style={{ margin:'8px 0' }}>{a.date} · {a.time} · Technician: {a.technician}</p>
-              <div style={{ display:'flex', gap:'8px' }}>
-                <button className="btn btn-ghost" onClick={() => alert('Feature coming soon')}>Reschedule</button>
-                <button className="btn btn-danger" onClick={() => alert('Cancel request submitted')}>Cancel</button>
-              </div>
+        <h1>My Appointments</h1>
+        {sortedAppointments.map((a) => {
+          const past = isPast(a);
+          return (
+            <article key={a.id}>
+              <h3>{a.service}</h3>
+              <p>{a.date} · {a.time}</p>
+              {!past && a.status !== "cancelled" && (
+                <button onClick={() => handleCancel(a.id)}>
+                  Cancel
+                </button>
+              )}
             </article>
-          ))}
-        </div>
+          );
+        })}
       </div>
     </main>
   );

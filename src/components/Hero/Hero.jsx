@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, React } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Auth from '../../utils/auth.js';
 import styles from './Hero.module.css';

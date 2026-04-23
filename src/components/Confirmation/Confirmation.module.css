@@ -101,6 +101,70 @@
   flex-wrap: wrap;
 }
 
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 400px;
+}
+
+.modalTitle {
+  margin: 0 0 1.25rem;
+  font-size: 18px;
+}
+
+.modalRows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.modalRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modalLabel {
+  color: #666;
+  font-size: 14px;
+}
+
+.modalValue {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.modalCode {
+  font-family: monospace;
+  font-size: 14px;
+  background: #f3f3f3;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.modalBtn {
+  width: 100%;
+  padding: 10px;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
 @media (max-width: 480px) {
   .wrap {
     padding: 40px 16px;

@@ -16,15 +16,15 @@ export const GET_ME = gql`
 `;
 
 export const GET_APPOINTMENT = gql`
-  query MyAppointments {
-    myAppointments {
+   query GetAppointment($id: ID!) {
+    appointment(id: $id) {
       id
       date
       time
       service
       status
       confirmation
-      createdAt
+      technician
     }
   }
 `;

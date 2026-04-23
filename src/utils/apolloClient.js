@@ -1,5 +1,7 @@
 import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 
 // Your deployed OR local backend
 const httpLink = createHttpLink({

@@ -1,73 +1,92 @@
-import { useEffect, useMemo } from 'react';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useState, useEffect, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { createPortal } from 'react-dom';
 import Notification from '../Notification/Notification.jsx';
 import styles from './Confirmation.module.css';
-import { useQuery } from '@apollo/client';
-import { GET_APPOINTMENT } from '../../utils/graphql';
 
-export default function Confirmation({ onReset }) {
+export default function Confirmation({ appointment, onReset }) {
   const navigate = useNavigate();
-  const location = useLocation();
-  const { id: appointmentId } = useParams();
+  const [showModal, setShowModal] = useState(true); // ← opens automatically on mount
 
-  // PRIMARY: appointment object passed via navigate state from Booking page.
-  // Always populated on the normal booking flow — zero extra network calls needed.
-  const navAppointment = location.state?.appointment;
+  // ✅ Guard
+  if (!appointment) {
+    return (
+      <p style={{ textAlign: 'center', marginTop: '2rem' }}>
+        No appointment data.
+      </p>
+    );
+  }
 
-  // FALLBACK: if the user refreshes the confirmation page, state is lost.
-  // Re-fetch from server using the :id URL param.
-  const { data, loading } = useQuery(GET_APPOINTMENT, {
-    variables: { id: appointmentId },
-    skip: !!navAppointment || !appointmentId,
-  });
-
-  // Single source of truth
-  const appointment = navAppointment || data?.appointment || {};
-
-  // Browser push notification (fires once data is ready)
   useEffect(() => {
-    if (!appointment.service) return;
-    if ('Notification' in window && Notification.permission === 'granted') {
-      new window.Notification('StarsMaid — Booking Confirmed!', {
+    if (!("Notification" in window)) return;
+
+    const showNotification = () => {
+      new window.Notification("StarsMaid — Booking Confirmed!", {
         body: `${appointment.service} on ${appointment.date} at ${appointment.time}`,
-        icon: '/favicon.ico',
+        icon: "/favicon.ico",
+      });
+    };
+
+    if (Notification.permission === "granted") {
+      showNotification();
+    } else if (Notification.permission !== "denied") {
+      Notification.requestPermission().then((perm) => {
+        if (perm === "granted") showNotification();
       });
     }
   }, [appointment]);
 
   const rows = useMemo(() => [
-    { label: 'Service', value: appointment.service },
-    { label: 'Date', value: appointment.date },
-    { label: 'Time', value: appointment.time },
-    { label: 'Status', value: appointment.status, tag: true },
-    { label: 'Confirmation #', value: appointment.confirmation, code: true },
+    { label: 'Service', value: appointment.service || '-' },
+    { label: 'Date', value: appointment.date || '-' },
+    { label: 'Time', value: appointment.time || '-' },
+    { label: 'Technician', value: appointment.technician || 'Assigned later' },
+    { label: 'Status', value: appointment.status || '-', tag: true },
+    { label: 'Confirmation #', value: appointment.confirmation || '-', code: true },
   ], [appointment]);
-
-  if (loading) {
-    return <p style={{ textAlign: 'center', marginTop: '2rem' }}>Loading your appointment…</p>;
-  }
 
   return (
     <>
+      {/* ── Modal ── renders in document.body to avoid any clipping/z-index issues */}
+      {showModal && createPortal(
+        <div className={styles.modalOverlay} onClick={() => setShowModal(false)}>
+          <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+            <h2 className={styles.modalTitle}>Appointment Booked!</h2>
+
+            <div className={styles.modalRows}>
+              <div className={styles.modalRow}>
+                <span className={styles.modalLabel}>Service</span>
+                <span className={styles.modalValue}>{appointment.service}</span>
+              </div>
+              <div className={styles.modalRow}>
+                <span className={styles.modalLabel}>Date</span>
+                <span className={styles.modalValue}>{appointment.date}</span>
+              </div>
+              <div className={styles.modalRow}>
+                <span className={styles.modalLabel}>Time</span>
+                <span className={styles.modalValue}>{appointment.time}</span>
+              </div>
+              <div className={styles.modalRow}>
+                <span className={styles.modalLabel}>Confirmation #</span>
+                <span className={styles.modalCode}>{appointment.confirmation}</span>
+              </div>
+            </div>
+
+            <button className={styles.modalBtn} onClick={() => setShowModal(false)}>
+              Got it
+            </button>
+          </div>
+        </div>,
+        document.body
+      )}
+
       <Notification
         title="Booking Confirmed!"
         body={`${appointment.service} · ${appointment.time} · ${appointment.date}`}
       />
 
       <div className={styles.wrap}>
-        <div className={styles.iconWrap}>
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" strokeWidth="2.5"
-            strokeLinecap="round" strokeLinejoin="round">
-            <polyline points="20 6 9 17 4 12" />
-          </svg>
-        </div>
-
         <h1 className={styles.h1}>Booking Confirmed!</h1>
-        <p className={styles.sub}>
-          Your appointment has been scheduled. A confirmation has been sent
-          to your email and phone number.
-        </p>
 
         <div className={styles.card}>
           <div className={styles.rows}>
@@ -78,9 +97,7 @@ export default function Confirmation({ onReset }) {
                   {row.code ? (
                     <span className={styles.code}>{row.value}</span>
                   ) : row.tag ? (
-                    <span className="tag tag-success" style={{ textTransform: 'capitalize' }}>
-                      {row.value}
-                    </span>
+                    <span className="tag tag-success">{row.value}</span>
                   ) : (
                     <span className={styles.rowValue}>{row.value}</span>
                   )}
