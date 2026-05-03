@@ -16,7 +16,7 @@ function PrivateRoute({ children }) {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/starsmaid/'>
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />

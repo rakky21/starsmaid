@@ -9,11 +9,12 @@ class Auth {
   // Remove token and reload
   logout() {
     localStorage.removeItem('id_token');
-    window.location.assign('/');
+    window.location.assign('/starsmaid/'); // or wherever
   }
   // Check if user is logged in and token is not expired
   loggedIn() {
-    return !!this.getToken();
+    const token = this.getToken();
+    return token && !this.isTokenExpired(token);
   }
   // Check if token is expired
   isTokenExpired(token) {

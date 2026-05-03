@@ -24,7 +24,7 @@ const CANCEL_APPOINTMENT = gql`
   }
 `;
 
-console.log("TOKEN:", localStorage.getItem("id_token"));
+console.log("token:", localStorage.getItem("id_token"));
 
 export default function MyAppointments() {
   const { loading, error, data, refetch } = useQuery(GET_APPOINTMENTS);

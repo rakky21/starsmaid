@@ -1,5 +1,4 @@
 import { gql } from '@apollo/client';
-const API_URL = '/graphql'; // adjust if your endpoint differs
 /* ── QUERIES ── */
 
 export const GET_ME = gql`
@@ -105,7 +104,7 @@ export const CANCEL_APPOINTMENT = gql`
 export async function gqlRequest(query, variables = {}) {
   const token = localStorage.getItem("token");
 
-  const res = await fetch(API_URL, {
+  const res = await fetch(import.meta.env.CLIENT_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

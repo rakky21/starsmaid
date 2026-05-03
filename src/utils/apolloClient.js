@@ -5,11 +5,11 @@ import ReactDOM from 'react-dom/client';
 
 // Your deployed OR local backend
 const httpLink = createHttpLink({
-  uri: import.meta.env.VITE_API_URL || 'http://localhost:4000/graphql',
+  uri: import.meta.env.CLIENT_URL
 });
 // Attach JWT token to every request
 const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem('id_token');
+  const token = localStorage.getItem("id_token");
   return {
     headers: {
       ...headers,
@@ -18,7 +18,9 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
-export const client = new ApolloClient({
+const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
+
+export default client;
