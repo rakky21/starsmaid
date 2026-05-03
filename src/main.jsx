@@ -1,12 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {
-  ApolloClient,
-  InMemoryCache,
   ApolloProvider,
-  createHttpLink,
 } from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
 import App from './App.jsx';
 import './index.css';
 import client from './utils/apolloClient.js';
