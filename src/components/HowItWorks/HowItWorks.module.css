@@ -4,14 +4,14 @@
 }
 
 .sectionLabel {
-	fontSize: .875rem;
+	font-size: .875rem;
 	font-weight: 600;
 	color: var(--accent);
 	text-transform: uppercase;
 }
 
 .sectionTitle {
-	fontSize: 1.75rem;
+	font-size: 1.75rem;
 	font-weight: 700;
 	color: var(--ink);
 	margin-top: 8px;
@@ -45,5 +45,5 @@
 	display: grid;
 	place-items: center;
 	font-weight: 700;
-	fontSize: .9rem;
+	font-size: .9rem;
 }

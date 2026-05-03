@@ -23,8 +23,8 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  fontFamily: var(--font-serif);
-  fontSize: 1.25rem;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
   color: var(--ink);
   user-select: none;
   flex-shrink: 0;

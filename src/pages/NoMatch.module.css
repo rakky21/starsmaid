@@ -10,21 +10,21 @@
 }
 
 .code {
-  fontFamily: var(--font-serif);
-  fontSize: 7rem;
+  font-family: var(--font-serif);
+  font-size: 7rem;
   line-height: 1;
   color: var(--accent);
   opacity: .25;
 }
 
 .h1 {
-  fontFamily: var(--font-serif);
-  fontSize: 2rem;
+  font-family: var(--font-serif);
+  font-size: 2rem;
   color: var(--ink);
 }
 
 .p {
-  fontSize: .95rem;
+  font-size: .95rem;
   color: var(--ink-2);
   max-width: 360px;
   line-height: 1.7;

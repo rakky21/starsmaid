@@ -59,12 +59,12 @@
 
 .title {
   font-weight: 700;
-  fontSize: .875rem;
+  font-size: .875rem;
   margin-bottom: 3px;
 }
 
 .body {
-  fontSize: .78rem;
+  font-size: .78rem;
   color: rgba(255, 255, 255, .7);
   line-height: 1.5;
 }

@@ -11,7 +11,7 @@
 }
 
 .sectionLabel {
-	fontSize: .75rem;
+	font-size: .75rem;
 	font-weight: 700;
 	letter-spacing: .1em;
 	text-transform: uppercase;
@@ -20,12 +20,12 @@
 }
 
 .sectionTitle {
-	fontFamily: var(--font-serif);
-	fontSize: clamp(1.8rem, 3vw, 2.8rem);
+	font-family: var(--font-serif);
+	font-size: clamp(1.8rem, 3vw, 2.8rem);
 }
 
 .sectionSub {
-	fontSize: 1rem;
+	font-size: 1rem;
 	color: var(--ink-2);
 	line-height: 1.7;
 	margin-bottom: 24px;

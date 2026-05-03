@@ -14,7 +14,7 @@
 }
 
 .areasLabel {
-	fontSize: 0.76rem;
+	font-size: 0.76rem;
 	font-weight: 700;
 	letter-spacing: 3px;
 	text-transform: uppercase;
@@ -25,8 +25,8 @@
 }
 
 .areasTitle {
-	fontFamily: 'Playfair Display', serif;
-	fontSize: clamp(2rem, 4vw, 2.75rem);
+	font-family: 'Playfair Display', serif;
+	font-size: clamp(2rem, 4vw, 2.75rem);
 	font-weight: 700;
 	color: #0b1e3d;
 	/* navy-deep */
@@ -55,8 +55,8 @@
 	border-radius: 50px;
 	/* fully rounded pill */
 	padding: 14px 20px;
-	fontFamily: 'DM Sans', sans-serif;
-	fontSize: 0.9rem;
+	font-family: 'DM Sans', sans-serif;
+	font-size: 0.9rem;
 	font-weight: 500;
 	color: #0b1e3d;
 	cursor: default;
@@ -67,7 +67,7 @@
 /* Pin icon — uses a hot-pink/red dot to match screenshot */
 .areasPill::before {
 	content: '📍';
-	fontSize: 0.85rem;
+	font-size: 0.85rem;
 	/* Or replace with an SVG icon / Font Awesome pin */
 }
 

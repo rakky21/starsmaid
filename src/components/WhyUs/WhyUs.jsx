@@ -17,7 +17,7 @@ export default function WhyUs() {
                 y="32"
                 fontSize="22"
                 fill="#EBC053"
-                fontFamily="serif"
+                font-family="serif"
               >
                 ★ ★ ★
               </text>

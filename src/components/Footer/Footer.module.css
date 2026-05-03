@@ -4,7 +4,7 @@ footer {
   /* navy-deepest — matches screenshot */
   color: rgba(255, 255, 255, 0.60);
   padding: 60px 0 0;
-  fontFamily: 'DM Sans', sans-serif;
+  font-family: 'DM Sans', sans-serif;
 }
 
 
@@ -30,8 +30,8 @@ footer {
 
 /* "Stars Maid" wordmark */
 .brandName {
-  fontFamily: 'Playfair Display', serif;
-  fontSize: 1.65rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.65rem;
   font-weight: 900;
   color: #ffffff;
   margin-bottom: 6px;
@@ -42,14 +42,14 @@ footer {
 .stars {
   color: #EBC053;
   /* --gold */
-  fontSize: 1rem;
+  font-size: 1rem;
   letter-spacing: 4px;
   margin-bottom: 18px;
 }
 
 /* Tagline paragraph */
 .brandDesk {
-  fontSize: 0.88rem;
+  font-size: 0.88rem;
   line-height: 1.80;
   color: rgba(255, 255, 255, 0.55);
   max-width: 320px;
@@ -67,7 +67,7 @@ footer {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  fontSize: 0.88rem;
+  font-size: 0.88rem;
   font-weight: 500;
   color: #EBC053;
   /* gold — matches screenshot */
@@ -82,12 +82,12 @@ footer {
 /* Small icon before phone / email */
 .footer-footerContact .icon-phone::before {
   content: '📞';
-  fontSize: 0.85rem;
+  font-size: 0.85rem;
 }
 
 .footer-footerContact .icon-email::before {
   content: '✉️';
-  fontSize: 0.85rem;
+  font-size: 0.85rem;
 }
 
 
@@ -96,8 +96,8 @@ footer {
 
 /* Column heading — "CLEANING", "HANDYMAN", "COMPANY" */
 .footerCol>h4 {
-  fontFamily: 'DM Sans', sans-serif;
-  fontSize: 0.72rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 2.5px;
   text-transform: uppercase;
@@ -119,7 +119,7 @@ footer {
 
 /* Nav link items */
 .footerCol li a {
-  fontSize: 0.90rem;
+  font-size: 0.90rem;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.62);
   text-decoration: none;
@@ -146,7 +146,7 @@ footer {
 
 /* "© 2025 Stars Maid. All rights reserved." */
 .footerCopyright {
-  fontSize: 0.82rem;
+  font-size: 0.82rem;
   color: rgba(255, 255, 255, 0.38);
 }
 
@@ -155,7 +155,7 @@ footer {
   display: flex;
   align-items: center;
   gap: 6px;
-  fontSize: 0.82rem;
+  font-size: 0.82rem;
   color: rgba(255, 255, 255, 0.38);
 }
 
