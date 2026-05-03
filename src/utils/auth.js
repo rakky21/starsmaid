@@ -4,12 +4,12 @@ class Auth {
   // Save token to localStorage
   login(token) {
     localStorage.setItem('id_token', token);
-    window.location.assign('/starsmaid/appointments'); // or wherever
+    window.location.assign('/appointments'); // or wherever
   }
   // Remove token and reload
   logout() {
     localStorage.removeItem('id_token');
-    window.location.assign('/starsmaid/'); // or wherever
+    window.location.assign('/'); // or wherever
   }
   // Check if user is logged in and token is not expired
   loggedIn() {

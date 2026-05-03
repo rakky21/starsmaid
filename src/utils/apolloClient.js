@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom/client';
 
 // Your deployed OR local backend
 const httpLink = createHttpLink({
-  uri: import.meta.env.CLIENT_URL
+  uri: import.meta.env.VITE_API_URL
 });
 // Attach JWT token to every request
 const authLink = setContext((_, { headers }) => {

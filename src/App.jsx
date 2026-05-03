@@ -45,7 +45,7 @@ export default function App() {
         />
 
         <Route
-          path="/starsmaid/appointments"
+          path="/appointments"
           element={
             <PrivateRoute>
               <MyAppointments />

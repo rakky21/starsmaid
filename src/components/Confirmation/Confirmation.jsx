@@ -23,7 +23,6 @@ export default function Confirmation({ appointment, onReset }) {
     const showNotification = () => {
       new window.Notification("StarsMaid — Booking Confirmed!", {
         body: `${appointment.service} on ${appointment.date} at ${appointment.time}`,
-        icon: "/favicon.ico",
       });
     };
 
