@@ -6,15 +6,12 @@
   "type": "module",
   "scripts": {
     "start": "vite",
-    "build": "vite build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "build": "vite build"
   },
   "dependencies": {
     "@apollo/client": "^3.14.1",
     "build": "^0.1.4",
     "dotenv": "^17.4.2",
-    "gh-pages": "^6.3.0",
     "graphql": "^16.13.2",
     "jwt-decode": "^4.0.0",
     "react": "^19.2.5",
