@@ -22,20 +22,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-font: 6rem;
+  font-size: 6rem;
   box-shadow: var(--sh-lg);
 }
 
 .h2 {
   font-family: var(--font-serif);
-  font-font: clamp(1.7rem, 2.8vw, 2.5rem);
+  font-size: clamp(1.7rem, 2.8vw, 2.5rem);
   color: var(--ink);
   margin-bottom: 16px;
   line-height: 1.2;
 }
 
 .p {
-  font-font: 0.95rem;
+  font-size: 0.95rem;
   color: var(--ink-2);
   line-height: 1.75;
   margin-bottom: 14px;
@@ -52,13 +52,13 @@
 
 .statVal {
   font-family: var(--font-serif);
-  font-font: 2rem;
+  font-size: 2rem;
   color: var(--accent);
   line-height: 1;
 }
 
 .statLbl {
-  font-font: 0.78rem;
+  font-size: 0.78rem;
   color: var(--ink-3);
   margin-top: 4px;
   font-weight: 500;
