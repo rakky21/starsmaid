@@ -9,6 +9,7 @@ export const GET_ME = gql`
       lastName
       email
       phone
+      address
       role
     }
   }
@@ -70,6 +71,35 @@ export const CREATE_USER = gql`
     }
   }
 `;
+export const UPDATE_PROFILE = gql`
+  mutation updateProfile(
+    $name: String
+    $lastName: String
+    $email: String
+    $phone: String
+    $address: String
+  ) {
+    updateProfile(
+      name: $name
+      lastName: $lastName
+      email: $email
+      phone: $phone
+      address: $address
+    ) {
+      token
+      user {
+        id
+        name
+        lastName
+        email
+        phone
+        address
+        role
+      }
+    }
+  }
+`;
+
 export const CREATE_APPOINTMENT = gql`
   mutation createAppointment(
     $date: String!

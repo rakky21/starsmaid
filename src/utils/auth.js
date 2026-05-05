@@ -2,9 +2,11 @@ import { jwtDecode } from 'jwt-decode';
 
 class Auth {
   // Save token to localStorage
-  login(token) {
+  login(token, redirect = true) {
     localStorage.setItem('id_token', token);
-    window.location.assign('/appointments'); // or wherever
+    if (redirect) {
+      window.location.assign('/dashboard');
+    }
   }
   // Remove token and reload
   logout() {
@@ -50,7 +52,8 @@ class Auth {
     const profile = this.getProfile();
     if (!profile?.data) return '??';
     const { name, lastName } = profile.data;
-    return `${name?.[0] || ''}${lastName?.[0] || ''}`.toUpperCase();
+    const initials = `${name?.[0] || ''}${lastName?.[0] || ''}`.trim();
+    return initials ? initials.toUpperCase() : '??';
   }
 };
 

@@ -3,7 +3,12 @@ import Nav from './components/Nav/Nav.jsx';
 import Home from './pages/Home.jsx';
 import Lobby from './pages/Lobby.jsx';
 import Booking from './pages/Booking.jsx';
+import Dashboard from './pages/Dashboard.jsx';
 import MyAppointments from './pages/Dashboard/MyAppointments.jsx';
+import History from './pages/Dashboard/History.jsx';
+import AccountProfile from './pages/AccountProfile.jsx';
+import AccountTeam from './pages/AccountTeam.jsx';
+import AccountRepContact from './pages/AccountRepContact.jsx';
 import NoMatch from './pages/NoMatch.jsx';
 import Auth from './utils/auth.js';
 import TermsPolicies from './pages/TermsPolicies.jsx';
@@ -38,6 +43,60 @@ export default function App() {
           element={
             <PrivateRoute>
               <Booking />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/dashboard"
+          element={
+            <PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/dashboard/appointments"
+          element={
+            <PrivateRoute>
+              <MyAppointments />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/dashboard/history"
+          element={
+            <PrivateRoute>
+              <History />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/account/profile"
+          element={
+            <PrivateRoute>
+              <AccountProfile />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/account/team"
+          element={
+            <PrivateRoute>
+              <AccountTeam />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/account/rep-contact"
+          element={
+            <PrivateRoute>
+              <AccountRepContact />
             </PrivateRoute>
           }
         />
