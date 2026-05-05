@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Nav from './components/Nav/Nav.jsx';
 import Home from './pages/Home.jsx';
 import Lobby from './pages/Lobby.jsx';
@@ -16,7 +16,7 @@ function PrivateRoute({ children }) {
 
 export default function App() {
   return (
-    <HashRouter basename="/starsmaid/">
+    <BrowserRouter>
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -24,7 +24,6 @@ export default function App() {
         <Route path="/terms" element={<TermsPolicies />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
 
-        {/* Protected routes */}
         <Route
           path="/appointments"
           element={
@@ -49,19 +48,19 @@ export default function App() {
             <PrivateRoute>
               <Confirmation
                 onReset={() => {
-                  window.location.href = '#/book';
+                  window.location.href = '/book';
                 }}
               />
             </PrivateRoute>
           }
         />
 
-        {/* Catch-all */}
         <Route path="*" element={<NoMatch />} />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
+
 // import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 // import Nav from './components/Nav/Nav.jsx';
 // import Home from './pages/Home.jsx';
@@ -80,7 +79,7 @@ export default function App() {
 
 // export default function App() {
 //   return (
-//     <BrowserRouter basename='/starsmaid/'>
+//     <BrowserRouter>
 //       <Nav />
 //       <Routes>
 //         <Route path="/" element={<Home />} />
