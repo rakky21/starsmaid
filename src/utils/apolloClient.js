@@ -1,11 +1,9 @@
-import { ApolloClient, InMemoryCache, createHttpLink } from "@apollo/client";
+import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import React from 'react';
-import ReactDOM from 'react-dom/client';
 
 // Your deployed OR local backend
 const httpLink = createHttpLink({
-  uri: import.meta.env.VITE_API_URL
+  uri: import.meta.env.VITE_API_URL || '/graphql',
 });
 // Attach JWT token to every request
 const authLink = setContext((_, { headers }) => {
