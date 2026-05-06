@@ -1,9 +1,9 @@
 import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
-// Your deployed OR local backend
+const apiUrl = import.meta.env.VITE_API_URL || 'https://server-m9ab.onrender.com/graphql';
 const httpLink = createHttpLink({
-  uri: import.meta.env.VITE_API_URL || '/graphql',
+  uri: apiUrl,
 });
 // Attach JWT token to every request
 const authLink = setContext((_, { headers }) => {

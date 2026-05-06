@@ -134,7 +134,7 @@ export const CANCEL_APPOINTMENT = gql`
 export async function gqlRequest(query, variables = {}) {
   const token = localStorage.getItem("id_token");
 
-  const apiUrl = import.meta.env.VITE_API_URL || '/graphql';
+  const apiUrl = import.meta.env.VITE_API_URL || 'https://server-m9ab.onrender.com/graphql';
   const res = await fetch(apiUrl, {
     method: "POST",
     headers: {
