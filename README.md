@@ -32,3 +32,5 @@ export default {
 
 Website can be reached at: 
 https://rakky21.github.io/starsmaid/
+
+This is a test
