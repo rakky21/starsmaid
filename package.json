@@ -22,11 +22,14 @@
     "vite": "^8.0.10"
   },
   "engines": {
-    "node": ">=18 <21"
+    "node": "18.x"
   },
   "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
   "main": "index.js",
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "optionalDependencies": {
+    "@rolldown/binding-linux-x64-gnu": "^1.0.2"
+  }
 }
