@@ -1,19 +1,19 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import Nav from './components/Nav/Nav.jsx';
-import Home from './pages/Home.jsx';
-import Lobby from './pages/Lobby.jsx';
-import Booking from './pages/Booking.jsx';
-import Dashboard from './pages/Dashboard.jsx';
-import MyAppointments from './pages/Dashboard/MyAppointments.jsx';
-import History from './pages/Dashboard/History.jsx';
-import AccountProfile from './pages/AccountProfile.jsx';
-import AccountTeam from './pages/AccountTeam.jsx';
-import AccountRepContact from './pages/AccountRepContact.jsx';
-import NoMatch from './pages/NoMatch.jsx';
-import Auth from './utils/auth.js';
-import TermsPolicies from './pages/TermsPolicies.jsx';
-import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
-import Confirmation from './components/Confirmation/Confirmation.jsx';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Nav from "./components/Nav/Nav.jsx";
+import Home from "./pages/Home.jsx";
+import Lobby from "./pages/Lobby.jsx";
+import Booking from "./pages/Booking.jsx";
+import Dashboard from "./pages/Dashboard.jsx";
+import MyAppointments from "./pages/Dashboard/MyAppointments.jsx";
+import History from "./pages/Dashboard/History.jsx";
+import AccountProfile from "./pages/AccountProfile.jsx";
+import AccountTeam from "./pages/AccountTeam.jsx";
+import AccountRepContact from "./pages/AccountRepContact.jsx";
+import NoMatch from "./pages/NoMatch.jsx";
+import Auth from "./utils/auth.js";
+import TermsPolicies from "./pages/TermsPolicies.jsx";
+import PrivacyPolicy from "./pages/PrivacyPolicy.jsx";
+import Confirmation from "./components/Confirmation/Confirmation.jsx";
 
 function PrivateRoute({ children }) {
   return Auth.loggedIn() ? children : <Navigate to="/login" replace />;
@@ -28,7 +28,6 @@ export default function App() {
         <Route path="/login" element={<Lobby />} />
         <Route path="/terms" element={<TermsPolicies />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
-
         <Route
           path="/appointments"
           element={
@@ -107,7 +106,7 @@ export default function App() {
             <PrivateRoute>
               <Confirmation
                 onReset={() => {
-                  window.location.href = '/book';
+                  window.location.href = "/book";
                 }}
               />
             </PrivateRoute>
