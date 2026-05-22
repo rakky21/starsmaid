@@ -20,7 +20,7 @@
 }
 
 .sectionTitle {
-	font-family: var(--font-serif);
+	fontFamily: var(--font-serif);
 	font-size: clamp(1.8rem, 3vw, 2.8rem);
 }
 

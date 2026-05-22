@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { useQuery, useMutation } from '@apollo/client';
-import { GET_ME, UPDATE_PROFILE } from '../utils/graphql.js';
+import { useQuery } from '@apollo/client';
+import { GET_ME } from '../utils/graphql.js';
 import Auth from '../utils/auth.js';
 
 export default function AccountProfile() {
@@ -15,7 +15,6 @@ export default function AccountProfile() {
   const [status, setStatus] = useState('');
 
   const { loading, error, data } = useQuery(GET_ME);
-  const [updateProfile, { loading: saving }] = useMutation(UPDATE_PROFILE);
 
   useEffect(() => {
     if (!data?.me) return;

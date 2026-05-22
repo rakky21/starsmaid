@@ -4,7 +4,7 @@ footer {
   /* navy-deepest — matches screenshot */
   color: rgba(255, 255, 255, 0.60);
   padding: 60px 0 0;
-  font-family: 'DM Sans', sans-serif;
+  fontFamily: 'DM Sans', sans-serif;
 }
 
 
@@ -30,7 +30,7 @@ footer {
 
 /* "Stars Maid" wordmark */
 .brandName {
-  font-family: 'Playfair Display', serif;
+  fontFamily: 'Playfair Display', serif;
   font-size: 1.65rem;
   font-weight: 900;
   color: #ffffff;
@@ -96,7 +96,7 @@ footer {
 
 /* Column heading — "CLEANING", "HANDYMAN", "COMPANY" */
 .footerCol>h4 {
-  font-family: 'DM Sans', sans-serif;
+  fontFamily: 'DM Sans', sans-serif;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 2.5px;

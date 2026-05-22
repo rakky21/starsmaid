@@ -3,7 +3,7 @@
 }
 
 .title {
-  font-family: var(--font-serif);
+  fontFamily: var(--font-serif);
   font-size: 1.75rem;
   color: var(--ink);
   margin-bottom: 6px;

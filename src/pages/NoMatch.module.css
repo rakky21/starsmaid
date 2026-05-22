@@ -10,7 +10,7 @@
 }
 
 .code {
-  font-family: var(--font-serif);
+  fontFamily: var(--font-serif);
   font-size: 7rem;
   line-height: 1;
   color: var(--accent);
@@ -18,7 +18,7 @@
 }
 
 .h1 {
-  font-family: var(--font-serif);
+  fontFamily: var(--font-serif);
   font-size: 2rem;
   color: var(--ink);
 }

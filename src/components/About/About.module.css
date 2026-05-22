@@ -27,7 +27,7 @@
 }
 
 .h2 {
-  font-family: var(--font-serif);
+  fontFamily: var(--font-serif);
   font-size: clamp(1.7rem, 2.8vw, 2.5rem);
   color: var(--ink);
   margin-bottom: 16px;
@@ -51,7 +51,7 @@
 }
 
 .statVal {
-  font-family: var(--font-serif);
+  fontFamily: var(--font-serif);
   font-size: 2rem;
   color: var(--accent);
   line-height: 1;

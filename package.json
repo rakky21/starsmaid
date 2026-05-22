@@ -21,9 +21,6 @@
     "@vitejs/plugin-react": "^6.0.1",
     "vite": "^8.0.10"
   },
-  "engines": {
-    "node": "18.x"
-  },
   "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
   "main": "index.js",
   "keywords": [],

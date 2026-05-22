@@ -45,7 +45,7 @@
 }
 
 .h1 {
-  font-family: var(--font-serif);
+  fontFamily: var(--font-serif);
   font-size: clamp(2.2rem, 4.5vw, 3.6rem);
   line-height: 1.15;
   color: var(--ink);
@@ -130,7 +130,7 @@
 }
 
 .cardTitle {
-  font-family: var(--font-serif);
+  fontFamily: var(--font-serif);
   font-size: 1.2rem;
   color: var(--ink);
 }

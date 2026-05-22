@@ -46,7 +46,7 @@
 }
 
 .cardName {
-  font-family: var(--font-serif);
+  fontFamily: var(--font-serif);
   font-size: 1.1rem;
   color: var(--ink);
   margin-bottom: 8px;

@@ -11,7 +11,7 @@
 .main {}
 
 .h1 {
-  font-family: var(--font-serif);
+  fontFamily: var(--font-serif);
   font-size: clamp(1.8rem, 3vw, 2.6rem);
   color: var(--ink);
   margin-bottom: 8px;
@@ -339,7 +339,7 @@
 }
 
 .sidebarTitle {
-  font-family: var(--font-serif);
+  fontFamily: var(--font-serif);
   font-size: 1.15rem;
   color: var(--ink);
   margin-bottom: 20px;

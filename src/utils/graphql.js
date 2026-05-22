@@ -1,4 +1,5 @@
 import { gql } from '@apollo/client';
+
 /* ── QUERIES ── */
 
 export const GET_ME = gql`
@@ -9,14 +10,36 @@ export const GET_ME = gql`
       lastName
       email
       phone
-      address
       role
+      createdAt
+    }
+  }
+`;
+
+export const GET_MY_APPOINTMENTS = gql`
+  query MyAppointments {
+    myAppointments {
+      id
+      date
+      time
+      service
+      status
+      confirmation
+      notes
+      technician
+      createdAt
+      user {
+        id
+        name
+        lastName
+        email
+      }
     }
   }
 `;
 
 export const GET_APPOINTMENT = gql`
-   query GetAppointment($id: ID!) {
+  query GetAppointment($id: ID!) {
     appointment(id: $id) {
       id
       date
@@ -24,7 +47,15 @@ export const GET_APPOINTMENT = gql`
       service
       status
       confirmation
+      notes
       technician
+      createdAt
+      user {
+        id
+        name
+        lastName
+        email
+      }
     }
   }
 `;
@@ -35,21 +66,60 @@ export const GET_BOOKED_TIMES = gql`
   }
 `;
 
-/* ── MUTATIONS ── */
-export const LOGIN = gql`
-  mutation login($email: String!, $password: String!) {
-    login(email: $email, password: $password) {
-      token
+/* Admin queries */
+export const GET_ALL_APPOINTMENTS = gql`
+  query AllAppointments {
+    allAppointments {
+      id
+      date
+      time
+      service
+      status
+      confirmation
+      technician
+      createdAt
       user {
         id
         name
+        lastName
         email
       }
     }
   }
 `;
+
+export const GET_ALL_USERS = gql`
+  query AllUsers {
+    allUsers {
+      id
+      name
+      lastName
+      email
+      phone
+      role
+      createdAt
+    }
+  }
+`;
+
+/* ── MUTATIONS ── */
+export const LOGIN = gql`
+  mutation Login($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
+      token
+      user {
+        id
+        name
+        lastName
+        email
+        role
+      }
+    }
+  }
+`;
+
 export const CREATE_USER = gql`
-  mutation createUser(
+  mutation CreateUser(
     $name: String!
     $lastName: String!
     $email: String!
@@ -66,34 +136,9 @@ export const CREATE_USER = gql`
       token
       user {
         id
-        email
-      }
-    }
-  }
-`;
-export const UPDATE_PROFILE = gql`
-  mutation updateProfile(
-    $name: String
-    $lastName: String
-    $email: String
-    $phone: String
-    $address: String
-  ) {
-    updateProfile(
-      name: $name
-      lastName: $lastName
-      email: $email
-      phone: $phone
-      address: $address
-    ) {
-      token
-      user {
-        id
         name
         lastName
         email
-        phone
-        address
         role
       }
     }
@@ -101,29 +146,23 @@ export const UPDATE_PROFILE = gql`
 `;
 
 export const CREATE_APPOINTMENT = gql`
-  mutation createAppointment(
-    $date: String!
-    $time: String!
-    $service: String!
-    $notes: String
-  ) {
-    createAppointment(
-      date: $date
-      time: $time
-      service: $service
-      notes: $notes
-    ) {
+  mutation CreateAppointment($date: String!, $time: String!, $service: String!, $notes: String) {
+    createAppointment(date: $date, time: $time, service: $service, notes: $notes) {
       id
-      service
       date
       time
+      service
       status
       confirmation
+      notes
+      technician
+      createdAt
     }
   }
 `;
+
 export const CANCEL_APPOINTMENT = gql`
-  mutation cancelAppointment($id: ID!) {
+  mutation CancelAppointment($id: ID!) {
     cancelAppointment(id: $id) {
       id
       status
@@ -131,24 +170,20 @@ export const CANCEL_APPOINTMENT = gql`
   }
 `;
 
-export async function gqlRequest(query, variables = {}) {
-  const token = localStorage.getItem("id_token");
-
-  const apiUrl = import.meta.env.VITE_API_URL || 'https://server-m9ab.onrender.com/graphql';
-  const res = await fetch(apiUrl, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      authorization: token ? `Bearer ${token}` : "",
-    },
-    body: JSON.stringify({ query, variables }),
-  });
-
-  const json = await res.json();
-
-  if (json.errors) {
-    throw new Error(json.errors[0].message);
+export const UPDATE_APPOINTMENT_STATUS = gql`
+  mutation UpdateAppointmentStatus($id: ID!, $status: String!) {
+    updateAppointmentStatus(id: $id, status: $status) {
+      id
+      status
+      technician
+      confirmation
+      createdAt
+    }
   }
+`;
 
-  return json.data;
-}
+export default {
+  GET_ME,
+  GET_MY_APPOINTMENTS, GET_APPOINTMENT, GET_BOOKED_TIMES, GET_ALL_APPOINTMENTS, GET_ALL_USERS,
+  LOGIN, CREATE_USER, CREATE_APPOINTMENT, CANCEL_APPOINTMENT, UPDATE_APPOINTMENT_STATUS
+};

@@ -30,7 +30,7 @@
 }
 
 .h1 {
-  font-family: var(--font-serif);
+  fontFamily: var(--font-serif);
   font-size: 2rem;
   color: var(--ink);
   margin-bottom: 10px;
@@ -86,7 +86,7 @@
 .code {
   background: var(--accent);
   color: #fff;
-  font-family: monospace;
+  fontFamily: monospace;
   letter-spacing: .12em;
   font-size: 1rem;
   padding: 3px 10px;
@@ -147,7 +147,7 @@
 }
 
 .modalCode {
-  font-family: monospace;
+  fontFamily: monospace;
   font-size: 14px;
   background: #f3f3f3;
   padding: 2px 8px;
